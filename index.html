@@ -143,103 +143,104 @@
   </section>
 
   <!-- Services -->
-  <section id="services" class="py-12 sm:py-20 px-2 sm:px-6 bg-transparent glass-ios mx-2 sm:mx-4 my-4 sm:my-6">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-2xl sm:text-4xl font-bold text-center text-purple-300 mb-6 sm:mb-8">Services</h2>
-      <div class="mb-4 sm:mb-6 text-center">
-        <select id="serviceFilter" class="text-black px-4 py-2 rounded bg-purple-600 bg-opacity-30 w-full max-w-xs sm:max-w-none">
-          <option value="all">All</option>
-          <option value="design">Design</option>
-          <option value="dev">Development</option>
-        </select>
-      </div>
-      <div id="serviceGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
-        <div data-type="design" class="service-card p-4 sm:p-6 bg-black bg-opacity-30 rounded-lg shadow-lg glass-ios text-sm sm:text-base">
-          UI/UX Design & Prototyping</div>
-        <div data-type="dev" class="service-card p-4 sm:p-6 bg-black bg-opacity-30 rounded-lg shadow-lg glass-ios text-sm sm:text-base">
-          Full-Stack Web Development</div>
-        <div data-type="design" class="service-card p-4 sm:p-6 bg-black bg-opacity-30 rounded-lg shadow-lg glass-ios text-sm sm:text-base">
-          Branding & Visual Identity</div>
-        <div data-type="dev" class="service-card p-4 sm:p-6 bg-black bg-opacity-30 rounded-lg shadow-lg glass-ios text-sm sm:text-base">
-          Data Analysis & Business Reporting</div>
-        <div data-type="dev" class="service-card p-4 sm:p-6 bg-black bg-opacity-30 rounded-lg shadow-lg glass-ios text-sm sm:text-base">
-          Cybersecurity & Infrastructure Security</div> 
-        <div data-type="dev" class="service-card p-4 sm:p-6 bg-black bg-opacity-30 rounded-lg shadow-lg glass-ios text-sm sm:text-base">
-          AI-Agent Integration</div>
-        <div data-type="design" class="service-card p-4 sm:p-6 bg-black bg-opacity-30 rounded-lg shadow-lg glass-ios text-sm sm:text-base">
-          Graphics & Media Design</div>
-      </div>
+<section id="services" class="py-12 sm:py-20 px-2 sm:px-6 bg-transparent glass-ios mx-2 sm:mx-4 my-4 sm:my-6">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-2xl sm:text-4xl font-bold text-center text-purple-300 mb-6 sm:mb-8">Services</h2>
+    <div class="mb-4 sm:mb-6 text-center">
+      <select id="serviceFilter" class="text-black px-4 py-2 rounded bg-purple-600 bg-opacity-30 w-full max-w-xs sm:max-w-none">
+        <option value="all">All</option>
+        <option value="design">Design</option>
+        <option value="dev">Development</option>
+      </select>
     </div>
-  </section>
+    <div id="serviceGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+      <div data-type="design" class="service-card p-4 sm:p-6 bg-black bg-opacity-30 rounded-lg shadow-lg glass-ios text-sm sm:text-base">
+        UI/UX Design & Prototyping</div>
+      <div data-type="dev" class="service-card p-4 sm:p-6 bg-black bg-opacity-30 rounded-lg shadow-lg glass-ios text-sm sm:text-base">
+        Full-Stack Web Development</div>
+      <div data-type="design" class="service-card p-4 sm:p-6 bg-black bg-opacity-30 rounded-lg shadow-lg glass-ios text-sm sm:text-base">
+        Branding & Visual Identity</div>
+      <div data-type="dev" class="service-card p-4 sm:p-6 bg-black bg-opacity-30 rounded-lg shadow-lg glass-ios text-sm sm:text-base">
+        Data Analysis & Business Reporting</div>
+      <div data-type="dev" class="service-card p-4 sm:p-6 bg-black bg-opacity-30 rounded-lg shadow-lg glass-ios text-sm sm:text-base">
+        Cybersecurity & Infrastructure Security</div> 
+      <div data-type="dev" class="service-card p-4 sm:p-6 bg-black bg-opacity-30 rounded-lg shadow-lg glass-ios text-sm sm:text-base">
+        AI-Agent Integration</div>
+      <div data-type="design" class="service-card p-4 sm:p-6 bg-black bg-opacity-30 rounded-lg shadow-lg glass-ios text-sm sm:text-base">
+        Graphics & Media Design</div>
+    </div>
+  </div>
+</section>
 
-  <!-- Styles for Funnel Animations -->
-  <style>
-    .service-card {
-      opacity: 0;
-      transform: scale(0.85) translateY(40px);
-      transition: all 0.6s ease;
-      will-change: transform, opacity;
-    }
+<style>
+  /* THe apple anim Animation- */
+  .service-card {
+    opacity: 0;
+    transform: translateY(60px) scale(0.92);
+    transition: 
+      opacity 0.6s cubic-bezier(0.22,1,0.36,1),
+      transform 0.7s cubic-bezier(0.22,1,0.36,1);
+    will-change: transform, opacity;
+    pointer-events: auto;
+  }
+  .funnel-show {
+    opacity: 1 !important;
+    transform: translateY(0) scale(1.04);
+    z-index: 10;
+  }
+  .funnel-hide {
+    opacity: 0 !important;
+    transform: translateY(60px) scale(0.92);
+    z-index: 0;
+  }
+</style>
 
-    .funnel-show-up {
-      opacity: 1;
-      transform: scale(1) translateY(0);
-    }
-
-    .funnel-show-down {
-      opacity: 1;
-      transform: scale(1) translateY(0);
-    }
-
-    .funnel-reset-up {
-      opacity: 0;
-      transform: scale(0.85) translateY(-40px);
-    }
-
-    .funnel-reset-down {
-      opacity: 0;
-      transform: scale(0.85) translateY(40px);
-    }
-  </style>
-
-  <!-- Funnel Animation Script (unchanged) -->
-  <script>
+<script>
+  // Enhanced Funnel Animation
+  function animateServiceCards(forceShowAll = false) {
     const cards = document.querySelectorAll('.service-card');
-    let lastScroll = window.scrollY;
+    const grid = document.getElementById('serviceGrid');
+    const gridRect = grid.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    const gridInView = gridRect.top < windowHeight - 80 && gridRect.bottom > 80;
 
-    function animateFunnel() {
-      const currScroll = window.scrollY;
-      const scrollingDown = currScroll > lastScroll;
+    let visibleIdx = 0;
+    cards.forEach((card, idx) => {
+      if (card.style.display === "none") {
+        card.classList.remove('funnel-show', 'funnel-hide');
+        return;
+      }
+      // Staggered animation for 'pull up' effect
+      if (gridInView || forceShowAll) {
+        setTimeout(() => {
+          card.classList.add('funnel-show');
+          card.classList.remove('funnel-hide');
+        }, visibleIdx * 90); // Stagger each card by 90ms
+        visibleIdx++;
+      } else {
+        card.classList.remove('funnel-show');
+        card.classList.add('funnel-hide');
+      }
+    });
+  }
 
-      cards.forEach(card => {
-        const rect = card.getBoundingClientRect();
-        const inView = rect.top < window.innerHeight - 100 && rect.bottom > 100;
+  // Filter logic
+  document.getElementById('serviceFilter').addEventListener('change', (e) => {
+    const val = e.target.value;
+    document.querySelectorAll('#serviceGrid > .service-card').forEach(card => {
+      card.style.display = (val === 'all' || card.dataset.type === val) ? 'block' : 'none';
+    });
+    setTimeout(() => animateServiceCards(true), 10);
+  });
 
-        if (inView) {
-          if (scrollingDown) {
-            card.classList.add('funnel-show-down');
-            card.classList.remove('funnel-reset-down', 'funnel-reset-up', 'funnel-show-up');
-          } else {
-            card.classList.add('funnel-show-up');
-            card.classList.remove('funnel-reset-down', 'funnel-reset-up', 'funnel-show-down');
-          }
-        } else {
-          if (scrollingDown) {
-            card.classList.add('funnel-reset-down');
-            card.classList.remove('funnel-show-down', 'funnel-show-up', 'funnel-reset-up');
-          } else {
-            card.classList.add('funnel-reset-up');
-            card.classList.remove('funnel-show-down', 'funnel-show-up', 'funnel-reset-down');
-          }
-        }
-      });
+  document.querySelectorAll('#serviceGrid > .service-card').forEach(card => {
+    card.style.display = 'block';
+  });
 
-      lastScroll = currScroll;
-    }
-
-    window.addEventListener('scroll', animateFunnel);
-    window.addEventListener('load', animateFunnel);
-  </script>
+  window.addEventListener('scroll', () => animateServiceCards(false));
+  // Animate once on load
+  window.addEventListener('DOMContentLoaded', () => setTimeout(() => animateServiceCards(false), 100));
+</script>
 
   <!-- Team -->
   <section id="team" class="py-12 sm:py-20 px-2 sm:px-6 bg-transparent glass-ios mx-2 sm:mx-4 my-4 sm:my-6" data-aos="fade-up">
