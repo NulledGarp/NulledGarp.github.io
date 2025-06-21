@@ -211,9 +211,10 @@
     <h2 class="text-4xl font-bold text-center text-purple-300 mb-12">Our Team</h2>
     <div class="grid md:grid-cols-3 gap-8">
       
-      <div class="text-center transition transform hover:scale-105 hover:-translate-y-2 hover:shadow-purple-500/40 hover:shadow-xl duration-500 glass-ios p-6"
+      <div class="glass-ios p-6 text-center transition transform hover:scale-105 hover:-translate-y-2 hover:shadow-purple-500/40 hover:shadow-xl duration-500"
            data-aos="zoom-in" data-aos-delay="100" data-aos-duration="800">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" class="w-24 h-24 mx-auto rounded-full mb-4" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
+             class="w-24 h-24 mx-auto rounded-full mb-4" />
         <h3 class="text-xl font-semibold">Damilare Osibanjo</h3>
         <p class="text-gray-400">Founder/Front Backend Developer</p>
           <a href="https://www.instagram.com/nulisdami/" target="_blank" aria-label="Instagram" class="inline-block">
@@ -230,9 +231,10 @@
             </a></svg>
 
         </div>
-      <div class="text-center transition transform hover:scale-105 hover:-translate-y-2 hover:shadow-purple-500/40 hover:shadow-xl duration-500 glass-ios p-6"
+      <div class="glass-ios p-6 text-center transition transform hover:scale-105 hover:-translate-y-2 hover:shadow-purple-500/40 hover:shadow-xl duration-500"
            data-aos="zoom-in" data-aos-delay="200" data-aos-duration="800">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" class="w-24 h-24 mx-auto rounded-full mb-4" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
+             class="w-24 h-24 mx-auto rounded-full mb-4" />
         <h3 class="text-xl font-semibold">Daniel Mohie</h3>
         <p class="text-gray-400">Co-Founder/Frontend Developer</p>
           <a href="https://www.instagram.com/epicexplorer_4/" target="_blank" aria-label="Instagram" class="inline-block">
@@ -248,9 +250,10 @@
             </svg>
             </a></svg>
         </div>
-      <div class="text-center transition transform hover:scale-105 hover:-translate-y-2 hover:shadow-purple-500/40 hover:shadow-xl duration-500 glass-ios p-6"
+      <div class="glass-ios p-6 text-center transition transform hover:scale-105 hover:-translate-y-2 hover:shadow-purple-500/40 hover:shadow-xl duration-500"
            data-aos="zoom-in" data-aos-delay="300" data-aos-duration="800">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" class="w-24 h-24 mx-auto rounded-full mb-4" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
+             class="w-24 h-24 mx-auto rounded-full mb-4" />
         <h3 class="text-xl font-semibold">Fawehinmi Erioluwa</h3>
         <p class="text-gray-400">UI/UX Designer & Mobile Head Developer</p>
            <a href="https://www.instagram.com/stay.with.eri/" target="_blank" aria-label="Instagram" class="inline-block">
@@ -266,9 +269,10 @@
             </svg>
             </a></svg>
         </div>
-      <div class="text-center transition transform hover:scale-105 hover:-translate-y-2 hover:shadow-purple-500/40 hover:shadow-xl duration-500 glass-ios p-6"
+      <div class="glass-ios p-6 text-center transition transform hover:scale-105 hover:-translate-y-2 hover:shadow-purple-500/40 hover:shadow-xl duration-500"
            data-aos="zoom-in" data-aos-delay="400" data-aos-duration="800">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" class="w-24 h-24 mx-auto rounded-full mb-4" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
+             class="w-24 h-24 mx-auto rounded-full mb-4" />
         <h3 class="text-xl font-semibold">Oye, Olawale Emmanuel</h3>
         <p class="text-gray-400">Data Scientist/Mentor</p>
             <a href="https://github.com/wakunuel" target="_blank" aria-label="Github" class="inline-block">
@@ -277,9 +281,10 @@
             </svg>
             </a></svg>
           </div>
-      <div class="text-center transition transform hover:scale-105 hover:-translate-y-2 hover:shadow-purple-500/40 hover:shadow-xl duration-500 glass-ios p-6"
+      <div class="glass-ios p-6 text-center transition transform hover:scale-105 hover:-translate-y-2 hover:shadow-purple-500/40 hover:shadow-xl duration-500"
            data-aos="zoom-in" data-aos-delay="500" data-aos-duration="800">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" class="w-24 h-24 mx-auto rounded-full mb-4" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
+             class="w-24 h-24 mx-auto rounded-full mb-4" />
         <h3 class="text-xl font-semibold">Ochefu Anthony</h3>
         <p class="text-gray-400">Team Collaborator & Mobile Developer</p>
            <a href="https://www.instagram.com/anthony2k261/" target="_blank" aria-label="Instagram" class="inline-block">
@@ -366,7 +371,12 @@
 
   <!-- Script -->
   <script>
-    AOS.init({ duration: 800 });
+    AOS.init({
+    duration: 800,
+    easing: 'ease-in-out',
+    once: false,              // Animate every time you scroll up/down
+    mirror: true              // REVERSE the animation on scroll up
+  });
 
     function toggleDarkMode() {
       const html = document.documentElement;
