@@ -20,43 +20,52 @@
 <div class="fixed inset-0 -z-20 w-full h-full overflow-hidden pointer-events-none">
   <div class="absolute inset-0 bg-black/60"></div> <!-- Soft black tint to dim video -->
 
-  <video 
-    id="bg-video" 
-    class="w-full h-full object-cover opacity-40 mix-blend-overlay" 
-    autoplay 
-    loop 
-    muted 
-    playsinline
-  >
-    <source src="Back.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
+<video 
+  id="bg-video"
+  class="w-full h-full object-cover opacity-40 mix-blend-overlay"
+  autoplay
+  loop
+  muted
+  playsinline
+  preload="metadata" <!-- Only loads metadata initially -->
+>
+  <source src="Back.mp4#t=0.001" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
 
-  <!-- Optional subtle gradient for a pinkish aesthetic -->
-  <div class="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-pink-950 opacity-30"></div>
-</div>
+<!-- 🔮 Midnight Glassy Top Bar -->
+<header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-gray-900/60 border-b border-pink-300/20 shadow-[0_4px_30px_rgba(255,192,203,0.05)] transition-all duration-300">
+  <div class="max-w-6xl mx-auto px-4 md:px-6 py-3 flex flex-wrap md:flex-nowrap justify-between items-center gap-4">
 
-  <!-- Top Bar Navigation (Apple/Sasuke Midnight Style) -->
-  <header class="bg-gray-900 bg-opacity-70 backdrop-blur-lg fixed top-0 left-0 w-full z-50 shadow-lg border-b border-pink-300/30">
-    <div class="max-w-6xl mx-auto px-6 py-3 flex justify-between items-center">
-      <div class="flex items-center space-x-3">
-        <span class="w-2 h-2 bg-pink-400 rounded-full shadow-pink-500/50"></span>
-        <span class="w-2 h-2 bg-gray-500 rounded-full"></span>
-        <span class="w-2 h-2 bg-gray-700 rounded-full"></span>
-        <h1 class="ml-4 text-xl font-bold text-pink-300 tracking-wide drop-shadow">Damilare Osibanjo</h1>
+    <!-- 🍥 Left side: Mac-style dots + Name -->
+    <div class="flex items-center space-x-4">
+      <!-- Colored Circles -->
+      <div class="flex space-x-1.5">
+        <span class="w-3 h-3 rounded-full bg-pink-400 shadow-sm shadow-pink-400/40"></span>
+        <span class="w-3 h-3 rounded-full bg-yellow-400/80 shadow-sm shadow-yellow-400/30"></span>
+        <span class="w-3 h-3 rounded-full bg-green-400/70 shadow-sm shadow-green-400/30"></span>
       </div>
-      <nav class="space-x-4 text-sm text-gray-200 font-medium">
-        <a href="#intro" class="hover:text-pink-400 transition">Intro</a>
-        <a href="#about" class="hover:text-pink-400 transition">About</a>
-        <a href="#stack" class="hover:text-pink-400 transition">Stack</a>
-        <a href="#values" class="hover:text-pink-400 transition">Values</a>
-        <a href="#exploring" class="hover:text-pink-400 transition">Exploring</a>
-        <a href="#projects" class="hover:text-pink-400 transition">Projects</a>
-        <a href="#languages" class="hover:text-pink-400 transition">Languages</a>
-        <a href="#download" class="hover:text-pink-400 transition">Download</a>
-      </nav>
+
+      <!-- Name -->
+      <h1 class="text-lg md:text-xl font-semibold text-pink-300 tracking-wide drop-shadow-sm">
+        Damilare Osibanjo
+      </h1>
     </div>
-  </header>
+
+    <!-- 🧭 Navigation -->
+    <nav class="flex flex-wrap justify-center md:justify-end gap-4 text-sm md:text-base font-medium text-gray-300">
+      <a href="#intro" class="hover:text-pink-400 transition duration-200">Home</a>
+      <a href="#about" class="hover:text-pink-400 transition duration-200">About Me</a>
+      <a href="#stack" class="hover:text-pink-400 transition duration-200">Tech Stack</a>
+      <a href="#values" class="hover:text-pink-400 transition duration-200">Values</a>
+      <a href="#exploring" class="hover:text-pink-400 transition duration-200">Exploring</a>
+      <a href="#projects" class="hover:text-pink-400 transition duration-200">Projects</a>
+      <a href="#languages" class="hover:text-pink-400 transition duration-200">Languages</a>
+      <a href="#download" class="hover:text-pink-400 transition duration-200">Résumé</a>
+    </nav>
+
+  </div>
+</header>
 
   <main class="max-w-6xl mx-auto px-4 sm:px-6 pt-32 pb-16 space-y-14 relative z-10">
 
@@ -144,63 +153,232 @@
   </div>
 </section>
 
-<section id="values" class="space-y-6">
-  <h2 class="text-3xl font-bold text-pink-400 text-center">Interests & Values</h2>
-  <ul class="list-disc list-inside text-gray-300 text-lg space-y-2 px-4 max-w-3xl mx-auto">
-    <li>I’m really into Quantitative Finance, Machine Learning, and Security Research</li>
-    <li>I care a lot about making systems efficient and using tech in ethical ways</li>
-    <li>I like diving deep into topics like history, geopolitics, and philosophy of systems</li>
-    <li>I’m big on lifelong learning — always trying to level up technically</li>
-    <li>I enjoy playing and watching sports — especially tennis, basketball, baseball, and football</li>
-    <li>I love predicting events and seeing how things play out, especially with data or trends</li>
-    <li>Probability and statistics are my favorite parts of math — they're just fun and useful</li>
-    <li>I’m a fantasy book nerd — huge fan of Harry Potter, Skandar, and Percy Jackson</li>
-    <li>Also into movies — especially anything Marvel or DC</li>
+<section id="values" class="py-16 bg-gray-900 rounded-2xl shadow-inner px-6 md:px-12 space-y-10">
+  <div class="text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-pink-400 tracking-wide">Interests & Values</h2>
+    <p class="text-gray-400 text-base mt-2">What I care about, enjoy, and geek out over</p>
+  </div>
+
+  <div class="max-w-4xl mx-auto grid gap-8 md:grid-cols-2 text-gray-300 text-lg">
+
+    <!-- Technical Curiosity -->
+    <div class="space-y-3">
+      <div class="flex items-center gap-2 text-pink-300 font-semibold text-xl">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17l-5-5m0 0l5-5m-5 5h12" />
+        </svg>
+        <h3>Technical Curiosity</h3>
+      </div>
+      <ul class="space-y-2 list-disc list-inside">
+        <li>Into Quant Finance, ML, and Security Research</li>
+        <li>Love making systems faster, cleaner, and smarter</li>
+        <li>Always learning — especially low-level stuff like C & Assembly</li>
+        <li>Big fan of statistics, probability, and using data to make decisions</li>
+      </ul>
+    </div>
+
+    <!-- Core Values -->
+    <div class="space-y-3">
+      <div class="flex items-center gap-2 text-pink-300 font-semibold text-xl">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+        <h3>Core Values</h3>
+      </div>
+      <ul class="space-y-2 list-disc list-inside">
+        <li>Care a lot about ethics and the impact of tech</li>
+        <li>Obsessed with learning — not just code, but how the world works</li>
+        <li>Enjoy thinking deeply about systems, people, and patterns</li>
+        <li>Curious about geopolitics, history, and philosophy</li>
+      </ul>
+    </div>
+
+    <!-- Fun & Fandoms -->
+    <div class="space-y-3">
+      <div class="flex items-center gap-2 text-pink-300 font-semibold text-xl">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L15 12 9.75 7v10z" />
+        </svg>
+        <h3>Fun & Fandoms</h3>
+      </div>
+      <ul class="space-y-2 list-disc list-inside">
+        <li>Fantasy books? Yes please — Harry Potter, Skandar, Percy Jackson</li>
+        <li>Marvel and DC movies are comfort food</li>
+        <li>Love making predictions and seeing if they play out right</li>
+        <li>Mess around with games and puzzle-y stuff sometimes</li>
+      </ul>
+    </div>
+
+    <!-- Sports -->
+    <div class="space-y-3">
+      <div class="flex items-center gap-2 text-pink-300 font-semibold text-xl">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+        </svg>
+        <h3>Sports & Competition</h3>
+      </div>
+      <ul class="space-y-2 list-disc list-inside">
+        <li>Watch & play tennis, basketball, baseball, football</li>
+        <li>Love how sports bring out strategy and grit</li>
+        <li>Enjoy competing — whether it’s code, games, or real life</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<section id="exploring" class="py-16 bg-gray-900 rounded-2xl shadow-inner px-6 md:px-12 space-y-6">
+  <div class="text-center">
+    <h2 class="text-3xl font-bold text-pink-400 tracking-wide">Currently Exploring</h2>
+    <p class="text-gray-400 text-base mt-2">Things I'm learning, building, or just messing around with lately</p>
+  </div>
+
+  <ul class="max-w-3xl mx-auto text-left text-gray-300 text-lg space-y-4">
+    <li class="flex items-start gap-3">
+      <span class="text-pink-400 mt-1">▸</span>
+      <span>I’ve been getting into reinforcement learning — it’s been a fun challenge trying to make agents that learn over time.</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="text-pink-400 mt-1">▸</span>
+      <span>Also diving into how trading algorithms work. Stuff like predicting patterns and market behavior feels like a cool mix of logic and luck.</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="text-pink-400 mt-1">▸</span>
+      <span>Trying to really sharpen my Python. Writing cleaner code, using async better, and just understanding what makes good structure.</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="text-pink-400 mt-1">▸</span>
+      <span>Been spending time in C and Assembly again. It’s hard — but seeing exactly what the machine is doing is kinda addictive.</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="text-pink-400 mt-1">▸</span>
+      <span>Exploring how to build fast and simple backend systems in Go. Mainly stuff like routing, performance, and clean architecture.</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="text-pink-400 mt-1">▸</span>
+      <span>Working on getting better at full-stack stuff — like state management, forms, routing, and setting up proper user flows.</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="text-pink-400 mt-1">▸</span>
+      <span>I’ve also been poking around networking — learning how systems talk to each other, and what makes a backend setup actually reliable.</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="text-pink-400 mt-1">▸</span>
+      <span>And yeah, also cyber-security is always in the background.</span>
+    </li>
   </ul>
 </section>
 
-    <section id="exploring" class="space-y-4">
-      <h2 class="text-2xl font-semibold text-pink-400">Currently Exploring</h2>
-      <ul class="list-disc list-inside text-gray-300 text-lg space-y-1">
-        <li>Reinforcement Learning & Statistical Arbitrage</li>
-        <li>Cybersecurity (Pentesting & Network Security)</li>
-        <li>Building low-level systems in C and Assembly</li>
-        <li>Scalable backend systems using Go and Python</li>
-      </ul>
-    </section>
+<section id="projects" class="space-y-10 py-16">
+  <h2 class="text-3xl font-bold text-pink-400 text-center">GitHub Projects (Highlights)</h2>
 
-    <section id="projects" class="space-y-6">
-      <h2 class="text-2xl font-semibold text-pink-400">GitHub Projects (Highlights)</h2>
+  <!-- Project: WindowsPortfolio -->
+  <div class="bg-gray-900/60 backdrop-blur-md p-6 rounded-xl border border-pink-500/10 shadow-xl hover:shadow-pink-400/20 transition-all duration-300">
+    <h3 class="text-white text-xl font-semibold">WindowsPortfolio</h3>
+    <p class="text-gray-300 mt-1">A portfolio website that emulates Windows 10, easy to configure for users with minimal coding experience.</p>
+    <a href="https://github.com/NulledGarp/Portfolio" target="_blank" class="text-pink-400 hover:underline mt-2 inline-block">View on GitHub →</a>
+  </div>
 
-      <div>
-        <h3 class="text-white font-semibold text-lg">SchoolBot (William)</h3>
-        <p class="text-gray-300">Smart school Q&A chatbot with info/contact detection</p>
-        <p class="text-sm text-gray-400">Stack: Node.js, Express, OpenAI API, Socket.IO</p>
-      </div>
+  <!-- Project: C Text Editor -->
+  <div class="bg-gray-900/60 backdrop-blur-md p-6 rounded-xl border border-pink-500/10 shadow-xl hover:shadow-pink-400/20 transition-all duration-300">
+    <h3 class="text-white text-xl font-semibold">C Text Editor</h3>
+    <p class="text-gray-300 mt-1">A simple Windows text editor in pure C using Win32 API with features like syntax highlighting, caret navigation, and word count.</p>
+    <ul class="list-disc list-inside text-sm text-gray-400 mt-2 space-y-1">
+      <li>Open/Save .txt files</li>
+      <li>Light/Dark mode toggle</li>
+      <li>Syntax highlighting for C keywords</li>
+      <li>Caret + clipboard support</li>
+    </ul>
+    <a href="https://github.com/NulledGarp/C-project-Text-Editor" target="_blank" class="text-pink-400 hover:underline mt-2 inline-block">View on GitHub →</a>
+  </div>
 
-      <div>
-        <h3 class="text-white font-semibold text-lg">Text Editor in C</h3>
-        <p class="text-gray-300">Custom text editor with caret, scrolling, and file I/O</p>
-        <p class="text-sm text-gray-400">Stack: Pure C, Win32 API</p>
-      </div>
+  <!-- Project: Yeshua Chat Assistant -->
+  <div class="bg-gray-900/60 backdrop-blur-md p-6 rounded-xl border border-pink-500/10 shadow-xl hover:shadow-pink-400/20 transition-all duration-300">
+    <h3 class="text-white text-xl font-semibold">Yeshua Chat Assistant</h3>
+    <p class="text-gray-300 mt-1">A real-time school chatbot built with Node.js, Express, and Socket.IO. Dynamic AI responses and Markdown-like formatting.</p>
+    <ul class="list-disc list-inside text-sm text-gray-400 mt-2 space-y-1">
+      <li>Live WebSocket messaging</li>
+      <li>Custom assistant persona</li>
+      <li>Responsive UI with animation</li>
+      <li>Templating with EJS</li>
+    </ul>
+    <a href="https://github.com/NulledGarp/ChatAssistant" target="_blank" class="text-pink-400 hover:underline mt-2 inline-block">View on GitHub →</a>
+  </div>
 
-      <div>
-        <h3 class="text-white font-semibold text-lg">Admin News Ticker</h3>
-        <p class="text-gray-300">Realtime scrolling updates and backend editor</p>
-        <p class="text-sm text-gray-400">Stack: Flask, JavaScript, TailwindCSS</p>
-      </div>
-    </section>
+  <!-- Project: Pong Game -->
+  <div class="bg-gray-900/60 backdrop-blur-md p-6 rounded-xl border border-pink-500/10 shadow-xl hover:shadow-pink-400/20 transition-all duration-300">
+    <h3 class="text-white text-xl font-semibold">Pong Game</h3>
+    <p class="text-gray-300 mt-1">Classic Pong game in JavaScript and Canvas. Includes difficulty levels and responsive controls.</p>
+    <ul class="list-disc list-inside text-sm text-gray-400 mt-2 space-y-1">
+      <li>3 difficulty modes</li>
+      <li>Mouse-controlled paddle</li>
+      <li>Clean start menu UI</li>
+    </ul>
+    <div class="flex gap-4 mt-2">
+      <a href="https://github.com/NulledGarp/Pong" target="_blank" class="text-pink-400 hover:underline">GitHub →</a>
+      <a href="https://nulledgarp.github.io/Pong/" target="_blank" class="text-pink-400 hover:underline">Live Demo →</a>
+    </div>
+  </div>
 
-    <section id="languages" class="space-y-4">
-      <h2 class="text-2xl font-semibold text-pink-400">Most Used Languages (GitHub)</h2>
-      <div class="flex justify-center">
-        <img 
-          src="https://github-readme-stats.vercel.app/api/top-langs/?username=NulledGarp&layout=compact&theme=radical&hide_border=true&count_private=true"
-          alt="Top Languages"
-          class="rounded-md shadow-md max-w-full w-[400px]"
-        />
-      </div>
-    </section>
+  <!-- Project: Console Snake Game -->
+  <div class="bg-gray-900/60 backdrop-blur-md p-6 rounded-xl border border-pink-500/10 shadow-xl hover:shadow-pink-400/20 transition-all duration-300">
+    <h3 class="text-white text-xl font-semibold">Console Snake Game (Windows)</h3>
+    <p class="text-gray-300 mt-1">A simple Snake game implemented in C for the Windows console using the Win32 API. No external libraries required.</p>
+    <ul class="list-disc list-inside text-sm text-gray-400 mt-2 space-y-1">
+      <li>Classic snake mechanics</li>
+      <li>Lightweight and efficient</li>
+      <li>Direct console cursor rendering</li>
+      <li>Randomized food spawning</li>
+      <li>Basic game over detection</li>
+    </ul>
+    <a href="https://github.com/NulledGarp/Snake-Game" target="_blank" class="text-pink-400 hover:underline mt-2 inline-block">View on GitHub →</a>
+  </div>
+
+  <!-- Project: Calculator -->
+  <div class="bg-gray-900/60 backdrop-blur-md p-6 rounded-xl border border-pink-500/10 shadow-xl hover:shadow-pink-400/20 transition-all duration-300">
+    <h3 class="text-white text-xl font-semibold">Simple Calculator</h3>
+    <p class="text-gray-300 mt-1">A basic calculator that performs arithmetic operations like addition, subtraction, multiplication, and division.</p>
+    <ul class="list-disc list-inside text-sm text-gray-400 mt-2 space-y-1">
+      <li>Basic operations: +, −, ×, ÷</li>
+      <li>Handles invalid input</li>
+      <li>Division by zero protection</li>
+    </ul>
+    <a href="https://github.com/NulledGarp/Simple-Calculator-Python" target="_blank" class="text-pink-400 hover:underline mt-2 inline-block">View on GitHub →</a>
+  </div>
+</section>
+
+
+  <section id="github" class="space-y-8 py-16">
+  <h2 class="text-3xl font-bold text-pink-400 text-center">GitHub Overview</h2>
+
+  <!-- Top Languages -->
+  <div class="flex justify-center">
+    <img 
+      src="https://github-readme-stats.vercel.app/api/top-langs/?username=NulledGarp&layout=compact&theme=radical&hide_border=true&count_private=true"
+      alt="Top Languages Used by NulledGarp on GitHub"
+      class="rounded-md shadow-md max-w-full w-[400px]"
+    />
+  </div>
+
+  <!-- GitHub Stats -->
+  <div class="flex justify-center">
+    <img 
+      src="https://github-readme-stats.vercel.app/api?username=NulledGarp&show_icons=true&theme=radical&hide_border=true&count_private=true"
+      alt="GitHub Stats for NulledGarp"
+      class="rounded-md shadow-md max-w-full w-[500px]"
+    />
+  </div>
+
+  <!-- Streak Stats -->
+  <div class="flex justify-center">
+    <img 
+      src="https://github-readme-streak-stats.herokuapp.com?user=NulledGarp&theme=radical&hide_border=true"
+      alt="GitHub Contribution Streak for NulledGarp"
+      class="rounded-md shadow-md max-w-full w-[500px]"
+    />
+  </div>
+</section>
+
     
 <section id="download" class="flex justify-center items-center py-20 px-4 bg-transparent">
   <div class="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl p-10 max-w-xl w-full space-y-6 text-center shadow-xl">
@@ -281,6 +459,20 @@
       ease: "power2.out"
     }, "-=0.4");
   });
+
+    document.addEventListener("DOMContentLoaded", () => {
+  const video = document.getElementById("bg-video");
+  const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      video.load();
+      observer.disconnect();
+    }
+  }, { threshold: 0.1 });
+
+  observer.observe(video);
+});
+
   </script>
 </body>
 </html>
+
