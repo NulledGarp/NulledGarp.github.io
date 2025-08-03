@@ -17,21 +17,24 @@
 </head>
 <body class="bg-gradient-to-b from-gray-900 via-gray-950 to-black text-white font-sans overflow-x-hidden relative">
 
+<!-- 🔲 Background Video Layer -->
 <div class="fixed inset-0 -z-20 w-full h-full overflow-hidden pointer-events-none">
   <div class="absolute inset-0 bg-black/60"></div> <!-- Soft black tint to dim video -->
 
-<video 
-  id="bg-video"
-  class="w-full h-full object-cover opacity-40 mix-blend-overlay"
-  autoplay
-  loop
-  muted
-  playsinline
-  preload="metadata" <!-- Only loads metadata initially -->
->
-  <source src="Back.mp4#t=0.001" type="video/mp4" />
-  Your browser does not support the video tag.
-</video>
+  <!-- Only loads metadata initially -->
+  <video 
+    id="bg-video"
+    class="w-full h-full object-cover opacity-40 mix-blend-overlay"
+    autoplay
+    loop
+    muted
+    playsinline
+    preload="metadata"
+  >
+    <source src="Back.mp4#t=0.001" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
 
 <!-- 🔮 Midnight Glassy Top Bar -->
 <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-gray-900/60 border-b border-pink-300/20 shadow-[0_4px_30px_rgba(255,192,203,0.05)] transition-all duration-300">
@@ -67,26 +70,26 @@
   </div>
 </header>
 
-  <main class="max-w-6xl mx-auto px-4 sm:px-6 pt-32 pb-16 space-y-14 relative z-10">
+<main class="max-w-6xl mx-auto px-4 sm:px-6 pt-32 pb-16 space-y-14 relative z-10">
 
-    <section class="text-center" id="intro">
-      <h1 class="text-4xl sm:text-5xl font-bold text-pink-300 mb-2">Damilare Osibanjo</h1>
-      <p class="text-lg text-gray-300 mb-1">Aspiring Quantitative Analyst | Data & Cybersecurity Enthusiast | Full-Stack Developer</p>
-      <div class="text-sm text-gray-400">
-        <p>Email: <a href="mailto:damiade5banjo@gmail.com" class="text-blue-400 underline">damiade5banjo@gmail.com</a></p>
-        <p>Instagram: <a href="https://instagram.com/nulisdami" target="_blank" class="text-blue-400 underline">instagram.com/nulisdami</a></p>
-      </div>
-    </section>
+  <section class="text-center" id="intro">
+    <h1 class="text-4xl sm:text-5xl font-bold text-pink-300 mb-2">Damilare Osibanjo</h1>
+    <p class="text-lg text-gray-300 mb-1">Aspiring Quantitative Analyst | Data & Cybersecurity Enthusiast | Full-Stack Developer</p>
+    <div class="text-sm text-gray-400">
+      <p>Email: <a href="mailto:damiade5banjo@gmail.com" class="text-blue-400 underline">damiade5banjo@gmail.com</a></p>
+      <p>Instagram: <a href="https://instagram.com/nulisdami" target="_blank" class="text-blue-400 underline">instagram.com/nulisdami</a></p>
+    </div>
+  </section>
 
-    <section id="about" class="space-y-4">
-      <h2 class="text-2xl font-semibold text-pink-400">About Me</h2>
-      <p class="text-gray-200 text-lg leading-relaxed">
-        I'm Damilare Osibanjo, a dedicated programmer with strong interests in quantitative finance,
-        cybersecurity, and full-stack development. I work across low-level systems, modern web stacks, and
-        data science pipelines. I enjoy problem-solving, analyzing data, and building secure, efficient systems.
-      </p>
-      <p class="text-gray-200 text-lg">I’m 16 years old, currently in SS3 at Yeshua High School, Nigeria.</p>
-    </section>
+  <section id="about" class="space-y-4">
+    <h2 class="text-2xl font-semibold text-pink-400">About Me</h2>
+    <p class="text-gray-200 text-lg leading-relaxed">
+      I'm Damilare Osibanjo, a dedicated programmer with strong interests in quantitative finance,
+      cybersecurity, and full-stack development. I work across low-level systems, modern web stacks, and
+      data science pipelines. I enjoy problem-solving, analyzing data, and building secure, efficient systems.
+    </p>
+    <p class="text-gray-200 text-lg">I’m 16 years old, currently in SS3 at Yeshua High School, Nigeria.</p>
+  </section>
 
 <section id="stack" class="py-20 text-white bg-transparent">
   <h2 class="text-3xl font-bold text-pink-400 text-center mb-12">Technical Stack</h2>
@@ -475,4 +478,5 @@
   </script>
 </body>
 </html>
+
 
