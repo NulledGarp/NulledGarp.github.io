@@ -1,451 +1,174 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth dark">
+<html lang="en" class="bg-gray-950 text-white">
 <head>
   <meta charset="UTF-8" />
-  <!-- Open Graph Tags -->
-  <meta property="og:title" content="MODE-Group" />
-  <meta property="og:description" content="Empowering Ideas. Building tomorrow’s solutions for today’s world." />
-  <meta property="og:image" content="https://i.postimg.cc/HLXyDXXq/Logo.png" />
-  <meta property="og:url" content="https://modegroup.netlify.app/" />
-  <meta property="og:type" content="website" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Damilare Osibanjo" />
+  <meta name="description" content="Damilare Osibanjo - Resume Landing Page" />
+  <title>Damilare Osibanjo | Resume</title>
 
-  <!-- X Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="MODE-Group" />
-  <meta name="twitter:description" content="Empowering Ideas. Building tomorrow’s solutions for today’s world." />
-  <meta name="twitter:image" content="https://i.postimg.cc/HLXyDXXq/Logo.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- ADDED FOR MOBILE COMPATIBILITY -->
-  <title>MODE-Group</title>
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <style>
-    /* iOS-style glass */
-    .glass-ios {
-      position: relative;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      backdrop-filter: saturate(180%) blur(25px);
-      -webkit-backdrop-filter: saturate(180%) blur(25px);
-      color: rgba(255, 255, 255, 0.8);
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-      border-radius: 1rem;
-      overflow: hidden;
-    }
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="wallpaper.css" />
 
-    .glass-dark {
-      background-color: rgba(60, 0, 90, 0.9) !important;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .nav-shrink {
-      padding-top: 0.25rem !important;
-      padding-bottom: 0.25rem !important;
-    }
-
-    /* Responsive fixes for mobile experience */
-    html, body {
-      max-width: 100vw;
-      overflow-x: hidden;
-      /* Prevent horizontal scrolling on mobile */
-    }
-
-    /* Make hero padding more mobile-friendly */
-    @media (max-width: 640px) {
-      .glass-ios {
-        border-radius: 0.75rem;
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
-      }
-      .nav-shrink {
-        padding-top: 0.1rem !important;
-        padding-bottom: 0.1rem !important;
-      }
-      #navbar .text-2xl {
-        font-size: 1.2rem !important;
-      }
-    }
-  </style>
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
-<body class="bg-gradient-to-br from-purple-950 via-gray-900 to-black text-white relative">
+<body class="bg-gray-950 text-white font-sans overflow-x-hidden relative">
 
-  <!-- Background video -->
-  <div class="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden">
-    <video 
-      autoplay 
-      muted 
-      loop 
-      playsinline 
-      preload="auto" 
-      class="w-full h-full object-cover pointer-events-none select-none" 
-      style="transform: translateZ(0); will-change: transform, opacity;">
-      <source src="Back.mp4" type="video/mp4" />
-      <img src="media/fallback.jpg" alt="Background" class="w-full h-full object-cover" />
-    </video>
-    <div class="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-xl"></div>
-  </div>
+  <div id="animated-bg" class="absolute inset-0 -z-10"></div>
 
-  <!-- Navbar -->
-  <nav id="navbar" class="fixed w-full top-0 z-50 px-4 sm:px-6 py-3 sm:py-4 transition-all duration-300 glass-ios">
-    <div class="flex items-center justify-between max-w-7xl mx-auto">
-      <h1 class="text-xl sm:text-2xl font-bold text-purple-400">MODE-Group</h1>
-      <div class="hidden md:flex space-x-6">
-        <a href="#about" class="hover:text-purple-400">About</a>
-        <a href="#services" class="hover:text-purple-400">Services</a>
-        <a href="#team" class="hover:text-purple-400">Team</a>
-        <a href="#contact" class="hover:text-purple-400">Contact</a>
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 py-10 space-y-14 relative z-10">
+
+    <section class="text-center" id="intro">
+      <h1 class="text-4xl sm:text-5xl font-bold text-pink-300 mb-2">Damilare Osibanjo</h1>
+      <p class="text-lg text-gray-300 mb-1">Aspiring Quantitative Analyst | Data & Cybersecurity Enthusiast | Full-Stack Developer</p>
+      <div class="text-sm text-gray-400">
+        <p>Email: <a href="mailto:damiade5banjo@gmail.com" class="text-blue-400 underline">damiade5banjo@gmail.com</a></p>
+        <p>Instagram: <a href="https://instagram.com/nulisdami" target="_blank" class="text-blue-400 underline">instagram.com/nulisdami</a></p>
       </div>
-      <button id="menuToggle" class="md:hidden focus:outline-none">
-        <span class="text-2xl">☰</span>
-      </button>
-    </div>
-    <div id="mobileMenu" class="hidden md:hidden flex flex-col items-center mt-2 sm:mt-4 space-y-2 w-full bg-black bg-opacity-80 rounded-b-lg pb-4 transition-all duration-300">
-      <a href="#about" class="block py-2 w-full text-center hover:text-purple-400">About</a>
-      <a href="#services" class="block py-2 w-full text-center hover:text-purple-400">Services</a>
-      <a href="#team" class="block py-2 w-full text-center hover:text-purple-400">Team</a>
-      <a href="#contact" class="block py-2 w-full text-center hover:text-purple-400">Contact</a>
-    </div>
-  </nav>
+    </section>
 
-  <!-- Hero -->
-  <section class="min-h-screen flex items-center justify-center text-center px-2 sm:px-4">
-    <div data-aos="fade-up" class="glass-ios p-4 sm:p-6 md:p-12 max-w-lg sm:max-w-2xl w-full mx-auto">
-      <h1 class="text-2xl sm:text-4xl md:text-5xl font-extrabold mb-3 sm:mb-4 text-purple-300">
-        Empowering Ideas
-      </h1>
-      <p class="text-sm sm:text-lg md:text-xl text-gray-300 mb-5 sm:mb-8">
-        Building tomorrow’s solutions for today’s world.
+    <section id="about" class="space-y-4">
+      <h2 class="text-2xl font-semibold text-pink-400">About Me</h2>
+      <p class="text-gray-200 text-lg leading-relaxed">
+        I'm Damilare Osibanjo, a dedicated programmer with strong interests in quantitative finance,
+        cybersecurity, and full-stack development. I work across low-level systems, modern web stacks, and
+        data science pipelines. I enjoy problem-solving, analyzing data, and building secure, efficient systems.
       </p>
-      <div class="flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0 items-center justify-center">
-        <a href="#services" class="px-5 py-2 sm:px-6 bg-purple-600 rounded-full hover:bg-purple-800 transition text-sm sm:text-base w-full sm:w-auto">Explore Services</a>
-        <a href="#contact" class="px-5 py-2 border border-purple-600 rounded-full hover:bg-purple-600 transition text-sm sm:text-base w-full sm:w-auto">Get in Touch</a>
-      </div>
-    </div>
-  </section>
+      <p class="text-gray-200 text-lg">I’m 16 years old, currently in SS3 at Yeshua High School, Nigeria.</p>
+    </section>
 
-  <!-- About -->
-  <section id="about" class="py-12 sm:py-20 px-2 bg-transparent glass-ios mx-2 sm:mx-4 my-4 sm:my-6" data-aos="fade-up">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-2xl sm:text-4xl font-bold text-purple-300 mb-5 sm:mb-6">About Us</h2>
-      <p class="text-gray-300 text-sm sm:text-base">We innovate, we build, we create. Our team is driven to deliver cutting-edge services with a data-driven and analytical approach to solving problems, creating services worth using.</p>
-    </div>
-    <div class="mt-8 sm:mt-12 text-center px-2 sm:px-4">
-      <div class="mx-auto w-full max-w-4xl">
+    <section id="stack" class="space-y-6">
+      <h2 class="text-2xl font-semibold text-pink-400">Technical Stack</h2>
+
+     <div>
+  <h3 class="font-semibold mb-1">Languages:</h3>
+  <div class="flex flex-wrap gap-2">
+    <img src="https://img.shields.io/badge/C-00599C?style=flat&logo=c&logoColor=white" alt="C" />
+    <img src="https://img.shields.io/badge/C++-00599C?style=flat&logo=c%2B%2B&logoColor=white" alt="C++" />
+    <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" alt="Python" />
+    <img src="https://img.shields.io/badge/Go-00ADD8?style=flat&logo=go&logoColor=white" alt="Go" />
+    <img src="https://img.shields.io/badge/Assembly-6E4C13?style=flat&logo=gnu&logoColor=white" alt="Assembly" />
+    <img src="https://img.shields.io/badge/SQL-4479A1?style=flat&logo=mysql&logoColor=white" alt="SQL" />
+  </div>
+</div>
+
+<div>
+  <h3 class="font-semibold mb-1">Web Development:</h3>
+  <div class="flex flex-wrap gap-2">
+    <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white" alt="HTML5" />
+    <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white" alt="CSS3" />
+    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black" alt="JavaScript" />
+    <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB" alt="React" />
+    <img src="https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white" alt="Vite" />
+    <img src="https://img.shields.io/badge/TailwindCSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white" alt="TailwindCSS" />
+    <img src="https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js&logoColor=white" alt="Node.js" />
+    <img src="https://img.shields.io/badge/Express.js-000000?style=flat&logo=express&logoColor=white" alt="Express" />
+    <img src="https://img.shields.io/badge/Socket.IO-010101?style=flat&logo=socket.io&logoColor=white" alt="Socket.IO" />
+    <img src="https://img.shields.io/badge/Flask-000000?style=flat&logo=flask&logoColor=white" alt="Flask" />
+  </div>
+</div>
+
+<div>
+  <h3 class="font-semibold mb-1">Data Science / Machine Learning:</h3>
+  <div class="flex flex-wrap gap-2">
+    <img src="https://img.shields.io/badge/NumPy-013243?style=flat&logo=numpy&logoColor=white" alt="NumPy" />
+    <img src="https://img.shields.io/badge/Pandas-150458?style=flat&logo=pandas&logoColor=white" alt="Pandas" />
+    <img src="https://img.shields.io/badge/Matplotlib-ffffff?style=flat&logo=matplotlib&logoColor=black" alt="Matplotlib" />
+    <img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=flat&logo=scikit-learn&logoColor=white" alt="Scikit-learn" />
+    <img src="https://img.shields.io/badge/Plotly-3F4F75?style=flat&logo=plotly&logoColor=white" alt="Plotly" />
+    <img src="https://img.shields.io/badge/Keras-D00000?style=flat&logo=keras&logoColor=white" alt="Keras" />
+    <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat&logo=pytorch&logoColor=white" alt="PyTorch" />
+  </div>
+</div>
+
+<div>
+  <h3 class="font-semibold mb-1">Tools & Platforms:</h3>
+  <div class="flex flex-wrap gap-2">
+    <img src="https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white" alt="Git" />
+    <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white" alt="GitHub" />
+    <img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat&logo=firebase&logoColor=black" alt="Firebase" />
+    <img src="https://img.shields.io/badge/Tampermonkey-000000?style=flat&logo=greasemonkey&logoColor=white" alt="Tampermonkey" />
+  </div>
+</div>
+    </section>
+
+    <section id="values" class="space-y-4">
+      <h2 class="text-2xl font-semibold text-pink-400">Interests & Values</h2>
+      <ul class="list-disc list-inside text-gray-300 text-lg space-y-1">
+        <li>Deep interest in Quantitative Finance, Machine Learning, and Security Research</li>
+        <li>Advocate of system efficiency and ethical technology</li>
+        <li>Strong analytical background in history, geopolitics, and system philosophy</li>
+        <li>Committed to lifelong learning and continuous technical growth</li>
+      </ul>
+    </section>
+
+    <section id="exploring" class="space-y-4">
+      <h2 class="text-2xl font-semibold text-pink-400">Currently Exploring</h2>
+      <ul class="list-disc list-inside text-gray-300 text-lg space-y-1">
+        <li>Reinforcement Learning & Statistical Arbitrage</li>
+        <li>Cybersecurity (Pentesting & Network Security)</li>
+        <li>Building low-level systems in C and Assembly</li>
+        <li>Scalable backend systems using Go and Python</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="space-y-6">
+      <h2 class="text-2xl font-semibold text-pink-400">GitHub Projects (Highlights)</h2>
+
+      <div>
+        <h3 class="text-white font-semibold text-lg">SchoolBot (William)</h3>
+        <p class="text-gray-300">Smart school Q&A chatbot with info/contact detection</p>
+        <p class="text-sm text-gray-400">Stack: Node.js, Express, OpenAI API, Socket.IO</p>
+      </div>
+
+      <div>
+        <h3 class="text-white font-semibold text-lg">Text Editor in C</h3>
+        <p class="text-gray-300">Custom text editor with caret, scrolling, and file I/O</p>
+        <p class="text-sm text-gray-400">Stack: Pure C, Win32 API</p>
+      </div>
+
+      <div>
+        <h3 class="text-white font-semibold text-lg">Admin News Ticker</h3>
+        <p class="text-gray-300">Realtime scrolling updates and backend editor</p>
+        <p class="text-sm text-gray-400">Stack: Flask, JavaScript, TailwindCSS</p>
+      </div>
+    </section>
+
+    <section id="languages" class="space-y-4">
+      <h2 class="text-2xl font-semibold text-pink-400">Most Used Languages (GitHub)</h2>
+      <div class="flex justify-center">
         <img 
-          src="https://lh5.googleusercontent.com/proxy/0FC1ypZCzk3JV3wWp8_gBgKmXi7TTbroIK7MV0jMpBdaWZ6llJ8iZtxcG5GFOlI9PQHlVUHU60K_Sxq0V7eG8N8p1eFx8CQr8FFPBZwnRo14IY92w9ex_qUt9ywav1YjYwc" 
-          alt="MODE-Group"
-          class="w-full aspect-video object-cover rounded-xl mb-4 shadow-lg"/>
+          src="https://github-readme-stats.vercel.app/api/top-langs/?username=NulledGarp&layout=compact&theme=radical&hide_border=true&count_private=true"
+          alt="Top Languages"
+          class="rounded-md shadow-md max-w-full w-[400px]"
+        />
       </div>
-      <p class="text-gray-400 max-w-3xl mx-auto text-xs sm:text-base">
-        Co-founded by Damilare Osibanjo and Daniel Mohie, MODE-Group is a passionate team on a mission to push the edge of what’s possible in tech and design.
-      </p>
-    </div>
-  </section>
+    </section>
 
-  <!-- Services -->
-<section id="services" class="py-12 sm:py-20 px-2 sm:px-6 bg-transparent glass-ios mx-2 sm:mx-4 my-4 sm:my-6">
-  <div class="max-w-6xl mx-auto">
-    <h2 class="text-2xl sm:text-4xl font-bold text-center text-purple-300 mb-6 sm:mb-8">Services</h2>
-    <div class="mb-4 sm:mb-6 text-center">
-      <select id="serviceFilter" class="text-black px-4 py-2 rounded bg-purple-600 bg-opacity-30 w-full max-w-xs sm:max-w-none">
-        <option value="all">All</option>
-        <option value="design">Design</option>
-        <option value="dev">Development</option>
-      </select>
-    </div>
-    <div id="serviceGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
-      <div data-type="design" class="service-card p-4 sm:p-6 bg-black bg-opacity-30 rounded-lg shadow-lg glass-ios text-sm sm:text-base">
-        UI/UX Design & Prototyping</div>
-      <div data-type="dev" class="service-card p-4 sm:p-6 bg-black bg-opacity-30 rounded-lg shadow-lg glass-ios text-sm sm:text-base">
-        Full-Stack Web Development</div>
-      <div data-type="design" class="service-card p-4 sm:p-6 bg-black bg-opacity-30 rounded-lg shadow-lg glass-ios text-sm sm:text-base">
-        Branding & Visual Identity</div>
-      <div data-type="dev" class="service-card p-4 sm:p-6 bg-black bg-opacity-30 rounded-lg shadow-lg glass-ios text-sm sm:text-base">
-        Data Analysis & Business Reporting</div>
-      <div data-type="dev" class="service-card p-4 sm:p-6 bg-black bg-opacity-30 rounded-lg shadow-lg glass-ios text-sm sm:text-base">
-        Cybersecurity & Infrastructure Security</div> 
-      <div data-type="dev" class="service-card p-4 sm:p-6 bg-black bg-opacity-30 rounded-lg shadow-lg glass-ios text-sm sm:text-base">
-        AI-Agent Integration</div>
-      <div data-type="design" class="service-card p-4 sm:p-6 bg-black bg-opacity-30 rounded-lg shadow-lg glass-ios text-sm sm:text-base">
-        Graphics & Media Design</div>
-    </div>
-  </div>
-</section>
+    <footer class="text-center text-gray-500 text-sm mt-12">
+      <p>&copy; 2025 Damilare Osibanjo</p>
+    </footer>
+  </main>
 
-<style>
-  /* THe apple anim Animation- */
-  .service-card {
-    opacity: 0;
-    transform: translateY(60px) scale(0.92);
-    transition: 
-      opacity 0.6s cubic-bezier(0.22,1,0.36,1),
-      transform 0.7s cubic-bezier(0.22,1,0.36,1);
-    will-change: transform, opacity;
-    pointer-events: auto;
-  }
-  .funnel-show {
-    opacity: 1 !important;
-    transform: translateY(0) scale(1.04);
-    z-index: 10;
-  }
-  .funnel-hide {
-    opacity: 0 !important;
-    transform: translateY(60px) scale(0.92);
-    z-index: 0;
-  }
-</style>
-
-<script>
-  // Enhanced Funnel Animation
-  function animateServiceCards(forceShowAll = false) {
-    const cards = document.querySelectorAll('.service-card');
-    const grid = document.getElementById('serviceGrid');
-    const gridRect = grid.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-    const gridInView = gridRect.top < windowHeight - 80 && gridRect.bottom > 80;
-
-    let visibleIdx = 0;
-    cards.forEach((card, idx) => {
-      if (card.style.display === "none") {
-        card.classList.remove('funnel-show', 'funnel-hide');
-        return;
-      }
-      // Staggered animation for 'pull up' effect
-      if (gridInView || forceShowAll) {
-        setTimeout(() => {
-          card.classList.add('funnel-show');
-          card.classList.remove('funnel-hide');
-        }, visibleIdx * 90); // Stagger each card by 90ms
-        visibleIdx++;
-      } else {
-        card.classList.remove('funnel-show');
-        card.classList.add('funnel-hide');
-      }
-    });
-  }
-
-  // Filter logic
-  document.getElementById('serviceFilter').addEventListener('change', (e) => {
-    const val = e.target.value;
-    document.querySelectorAll('#serviceGrid > .service-card').forEach(card => {
-      card.style.display = (val === 'all' || card.dataset.type === val) ? 'block' : 'none';
-    });
-    setTimeout(() => animateServiceCards(true), 10);
-  });
-
-  document.querySelectorAll('#serviceGrid > .service-card').forEach(card => {
-    card.style.display = 'block';
-  });
-
-  window.addEventListener('scroll', () => animateServiceCards(false));
-  // Animate once on load
-  window.addEventListener('DOMContentLoaded', () => setTimeout(() => animateServiceCards(false), 100));
-</script>
-
-  <!-- Team -->
-  <section id="team" class="py-12 sm:py-20 px-2 sm:px-6 bg-transparent glass-ios mx-2 sm:mx-4 my-4 sm:my-6" data-aos="fade-up">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-2xl sm:text-4xl font-bold text-center text-purple-300 mb-8 sm:mb-12">Our Team</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-8">
-
-<div class="glass-ios p-6 text-center transition transform hover:scale-105 hover:-translate-y-2 hover:shadow-purple-500/40 hover:shadow-xl duration-500"
-           data-aos="zoom-in" data-aos-delay="100" data-aos-duration="800">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
-             class="w-24 h-24 mx-auto rounded-full mb-4" />
-        <h3 class="text-xl font-semibold">Damilare Osibanjo</h3>
-        <p class="text-gray-400">Founder/Front Backend Developer</p>
-          <a href="https://www.instagram.com/nulisdami/" target="_blank" aria-label="Instagram" class="inline-block">
-            <svg xmlns="http://www.w3.org/2000/svg" class="inline w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <rect width="20" height="20" x="2" y="2" rx="6" stroke="currentColor" stroke-width="2" fill="none"/>
-              <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2" fill="none"/>
-              <circle cx="17" cy="7" r="1.2" fill="currentColor"/>
-            </svg>
-          </a>
-          <a href="https://github.com/NulledGarp" target="_blank" aria-label="Github" class="inline-block">
-            <svg xmlns="http://www.w3.org/2000/svg" class="inline w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2C6.477 2 2 6.484 2 12.021c0 4.426 2.865 8.18 6.839 9.504.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.091-.647.35-1.088.636-1.338-2.221-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.563 9.563 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.847-2.337 4.695-4.566 4.944.36.31.68.921.68 1.856 0 1.34-.012 2.421-.012 2.751 0 .268.18.579.688.481C19.138 20.197 22 16.444 22 12.021 22 6.484 17.523 2 12 2z"/>
-            </svg>
-            </a></svg>
-
-        </div>
-      <div class="glass-ios p-6 text-center transition transform hover:scale-105 hover:-translate-y-2 hover:shadow-purple-500/40 hover:shadow-xl duration-500"
-           data-aos="zoom-in" data-aos-delay="200" data-aos-duration="800">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
-             class="w-24 h-24 mx-auto rounded-full mb-4" />
-        <h3 class="text-xl font-semibold">Daniel Mohie</h3>
-        <p class="text-gray-400">Co-Founder/Frontend Developer</p>
-          <a href="https://www.instagram.com/epicexplorer_4/" target="_blank" aria-label="Instagram" class="inline-block">
-            <svg xmlns="http://www.w3.org/2000/svg" class="inline w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <rect width="20" height="20" x="2" y="2" rx="6" stroke="currentColor" stroke-width="2" fill="none"/>
-              <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2" fill="none"/>
-              <circle cx="17" cy="7" r="1.2" fill="currentColor"/>
-            </svg>
-          </a>
-          <a href="https://github.com/Dani-TechLab" target="_blank" aria-label="Github" class="inline-block">
-            <svg xmlns="http://www.w3.org/2000/svg" class="inline w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2C6.477 2 2 6.484 2 12.021c0 4.426 2.865 8.18 6.839 9.504.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.091-.647.35-1.088.636-1.338-2.221-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.563 9.563 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.847-2.337 4.695-4.566 4.944.36.31.68.921.68 1.856 0 1.34-.012 2.421-.012 2.751 0 .268.18.579.688.481C19.138 20.197 22 16.444 22 12.021 22 6.484 17.523 2 12 2z"/>
-            </svg>
-            </a></svg>
-        </div>
-      <div class="glass-ios p-6 text-center transition transform hover:scale-105 hover:-translate-y-2 hover:shadow-purple-500/40 hover:shadow-xl duration-500"
-           data-aos="zoom-in" data-aos-delay="300" data-aos-duration="800">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
-             class="w-24 h-24 mx-auto rounded-full mb-4" />
-        <h3 class="text-xl font-semibold">Fawehinmi Erioluwa</h3>
-        <p class="text-gray-400">UI/UX Designer & Mobile Head Developer</p>
-           <a href="https://www.instagram.com/stay.with.eri/" target="_blank" aria-label="Instagram" class="inline-block">
-            <svg xmlns="http://www.w3.org/2000/svg" class="inline w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <rect width="20" height="20" x="2" y="2" rx="6" stroke="currentColor" stroke-width="2" fill="none"/>
-              <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2" fill="none"/>
-              <circle cx="17" cy="7" r="1.2" fill="currentColor"/>
-            </svg>
-          </a>
-           <a href="https://github.com/Neo20939" target="_blank" aria-label="Github" class="inline-block">
-            <svg xmlns="http://www.w3.org/2000/svg" class="inline w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2C6.477 2 2 6.484 2 12.021c0 4.426 2.865 8.18 6.839 9.504.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.091-.647.35-1.088.636-1.338-2.221-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.563 9.563 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.847-2.337 4.695-4.566 4.944.36.31.68.921.68 1.856 0 1.34-.012 2.421-.012 2.751 0 .268.18.579.688.481C19.138 20.197 22 16.444 22 12.021 22 6.484 17.523 2 12 2z"/>
-            </svg>
-            </a></svg>
-        </div>
-      <div class="glass-ios p-6 text-center transition transform hover:scale-105 hover:-translate-y-2 hover:shadow-purple-500/40 hover:shadow-xl duration-500"
-           data-aos="zoom-in" data-aos-delay="400" data-aos-duration="800">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
-             class="w-24 h-24 mx-auto rounded-full mb-4" />
-        <h3 class="text-xl font-semibold">Oye, Olawale Emmanuel</h3>
-        <p class="text-gray-400">Data Scientist (AI Specialist) / Mentor</p>
-            <a href="https://github.com/wakunuel" target="_blank" aria-label="Github" class="inline-block">
-            <svg xmlns="http://www.w3.org/2000/svg" class="inline w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2C6.477 2 2 6.484 2 12.021c0 4.426 2.865 8.18 6.839 9.504.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.091-.647.35-1.088.636-1.338-2.221-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.563 9.563 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.847-2.337 4.695-4.566 4.944.36.31.68.921.68 1.856 0 1.34-.012 2.421-.012 2.751 0 .268.18.579.688.481C19.138 20.197 22 16.444 22 12.021 22 6.484 17.523 2 12 2z"/>
-            </svg>
-            </a></svg>
-          </div>
-      <div class="glass-ios p-6 text-center transition transform hover:scale-105 hover:-translate-y-2 hover:shadow-purple-500/40 hover:shadow-xl duration-500"
-           data-aos="zoom-in" data-aos-delay="500" data-aos-duration="800">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
-             class="w-24 h-24 mx-auto rounded-full mb-4" />
-        <h3 class="text-xl font-semibold">Ochefu Anthony</h3>
-        <p class="text-gray-400">Team Collaborator & Mobile Developer</p>
-           <a href="https://www.instagram.com/anthony2k261/" target="_blank" aria-label="Instagram" class="inline-block">
-            <svg xmlns="http://www.w3.org/2000/svg" class="inline w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <rect width="20" height="20" x="2" y="2" rx="6" stroke="currentColor" stroke-width="2" fill="none"/>
-              <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2" fill="none"/>
-              <circle cx="17" cy="7" r="1.2" fill="currentColor"/>
-            </svg>
-          </a>
-           <a href="https://github.com/Anthony-1532" target="_blank" aria-label="Github" class="inline-block">
-            <svg xmlns="http://www.w3.org/2000/svg" class="inline w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2C6.477 2 2 6.484 2 12.021c0 4.426 2.865 8.18 6.839 9.504.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.091-.647.35-1.088.636-1.338-2.221-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.563 9.563 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.847-2.337 4.695-4.566 4.944.36.31.68.921.68 1.856 0 1.34-.012 2.421-.012 2.751 0 .268.18.579.688.481C19.138 20.197 22 16.444 22 12.021 22 6.484 17.523 2 12 2z"/>
-            </svg>
-            </a></svg>
-        </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="py-12 sm:py-20 px-2 sm:px-6 bg-transparent glass-ios mx-2 sm:mx-4 my-4 sm:my-6" data-aos="fade-up">
-    <div class="max-w-xl mx-auto text-center">
-      <h2 class="text-2xl sm:text-4xl font-bold text-purple-300 mb-5 sm:mb-6">Contact Us</h2>
-      <p class="text-gray-300 mb-6 sm:mb-8 text-sm sm:text-base">Ready to build with us? Let’s talk.</p>
-      <form class="space-y-3 sm:space-y-4" id="contactForm" autocomplete="off">
-        <input type="text" placeholder="Your Name" class="w-full px-4 py-2 rounded bg-black bg-opacity-30 text-sm sm:text-base" />
-        <input type="email" placeholder="Email" class="w-full px-4 py-2 rounded bg-black bg-opacity-30 text-sm sm:text-base" id="contactEmail" />
-        <textarea placeholder="Message" class="w-full px-4 py-2 rounded bg-black bg-opacity-30 text-sm sm:text-base"></textarea>
-        <button class="w-full sm:w-auto px-6 py-3 bg-purple-600 rounded-full hover:bg-purple-800 transition text-sm sm:text-base">Send</button>
-      </form>
-      <script>
-        // email validation
-        document.getElementById('contactEmail').addEventListener('input', function() {
-          const email = this.value;
-          if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-            this.setCustomValidity('Please enter a valid email address.');
-          } else {
-            this.setCustomValidity('');
-          }
-        });
-
-        // Email Sending
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-          event.preventDefault();
-          const name = this.querySelector('input[type="text"]').value;
-          const email = this.querySelector('input[type="email"]').value;
-          const message = this.querySelector('textarea').value;
-
-          if (name && email && message) {
-            alert(`Thank you, ${name}! Your message has been sent.`);
-            this.reset();
-          } else {
-            alert('Please fill in all fields.');
-          }
-        });
-      </script>
-    </div>
-    <div class="mt-8 sm:mt-12 text-center">
-      <p class="text-gray-400 text-xs sm:text-base">Follow us on social media</p>
-      <div class="flex justify-center space-x-4 mt-3 sm:mt-4">
-        <a href="https://www.instagram.com/edmgroup_/" class="text-purple-400 hover:text-purple-600" target="_blank" aria-label="Instagram">
-          <svg xmlns="http://www.w3.org/2000/svg" class="inline w-6 h-6 sm:w-7 sm:h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <rect width="20" height="20" x="2" y="2" rx="6" stroke="currentColor" stroke-width="2" fill="none"/>
-            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2" fill="none"/>
-            <circle cx="17" cy="7" r="1.2" fill="currentColor"/>
-          </svg>
-        </a>
-      </div>
-      <div class="mt-3 sm:mt-4 text-gray-300 text-xs sm:text-base">
-        <span class="font-semibold">Give us a call:</span> +234 123 456 7890<br>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="glass-ios bg-gray-900 dark:bg-black text-white py-5 sm:py-6 text-center relative z-10 text-xs sm:text-base">
-    <p>© 2025 MODE-Group. All rights reserved.</p>
-    <div class="mt-2 space-x-3 sm:space-x-4">
-      <a href="#" class="hover:text-purple-400">Privacy</a>
-      <a href="#" class="hover:text-purple-400">Terms</a>
-      <a href="#contact" class="hover:text-purple-400">Support</a>
-    </div>
-  </footer>
-
-  <!-- Script -->
   <script>
-    AOS.init({
-      duration: 800,
-      easing: 'ease-in-out',
-      once: false,              // Animate every time you scroll up/down
-      mirror: true              // REVERSE the animation on scroll up
-    });
+    gsap.registerPlugin(ScrollTrigger);
 
-    function toggleDarkMode() {
-      const html = document.documentElement;
-      html.classList.toggle('dark');
-      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
-    }
-
-    if (localStorage.getItem('theme') === 'dark') {
-      document.documentElement.classList.add('dark');
-    }
-
-    window.addEventListener('scroll', () => {
-      const nav = document.getElementById('navbar');
-      if (window.scrollY > 10) {
-        nav.classList.add('nav-shrink', 'glass-dark');
-      } else {
-        nav.classList.remove('nav-shrink', 'glass-dark');
-      }
-    });
-
-    document.getElementById('menuToggle').addEventListener('click', () => {
-      document.getElementById('mobileMenu').classList.toggle('hidden');
-    });
-
-    document.getElementById('serviceFilter')?.addEventListener('change', (e) => {
-      const val = e.target.value;
-      document.querySelectorAll('#serviceGrid > div').forEach(card => {
-        card.style.display = (val === 'all' || card.dataset.type === val) ? 'block' : 'none';
+    gsap.utils.toArray("section").forEach((section, index) => {
+      gsap.from(section, {
+        scrollTrigger: {
+          trigger: section,
+          start: "top 80%",
+          toggleActions: "play reverse play reverse"
+        },
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: "power2.out",
+        delay: index * 0.05
       });
-    });
-
-    document.querySelectorAll('#serviceGrid > div').forEach(card => {
-      card.style.display = 'block'; // Show all cards initially
     });
   </script>
 </body>
