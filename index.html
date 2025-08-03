@@ -17,15 +17,24 @@
 </head>
 <body class="bg-gradient-to-b from-gray-900 via-gray-950 to-black text-white font-sans overflow-x-hidden relative">
 
-  <!-- Sasuke Midnight Video Background -->
-  <div class="fixed inset-0 -z-20 w-full h-full overflow-hidden pointer-events-none">
-    <video id="bg-video" class="w-full h-full object-cover opacity-70" autoplay loop muted playsinline>
-      <source src="Back.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <!-- Midnight overlay for depth and pinkish edge -->
-    <div class="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-pink-900 opacity-50"></div>
-  </div>
+<div class="fixed inset-0 -z-20 w-full h-full overflow-hidden pointer-events-none">
+  <div class="absolute inset-0 bg-black/60"></div> <!-- Soft black tint to dim video -->
+
+  <video 
+    id="bg-video" 
+    class="w-full h-full object-cover opacity-40 mix-blend-overlay" 
+    autoplay 
+    loop 
+    muted 
+    playsinline
+  >
+    <source src="Back.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Optional subtle gradient for a pinkish aesthetic -->
+  <div class="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-pink-950 opacity-30"></div>
+</div>
 
   <!-- Top Bar Navigation (Apple/Sasuke Midnight Style) -->
   <header class="bg-gray-900 bg-opacity-70 backdrop-blur-lg fixed top-0 left-0 w-full z-50 shadow-lg border-b border-pink-300/30">
