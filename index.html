@@ -350,115 +350,55 @@ html.is-loaded section {
   <script>
 gsap.registerPlugin(ScrollTrigger);
 
-// 👉 Wait until DOM and layout are fully ready
 window.addEventListener("load", () => {
-  // 🔄 Refresh ScrollTrigger after everything is in place
-  ScrollTrigger.refresh();
-
-  // ✅ Animate all visible sections
+  // ✅ Animate all main sections
   gsap.utils.toArray("section").forEach((section, index) => {
-    const elements = section.querySelectorAll("h2, h3, p, ul, a, img, .card, .project-card");
-
-    const tl = gsap.timeline({
+    gsap.from(section, {
       scrollTrigger: {
         trigger: section,
         start: "top 85%",
-        end: "bottom 20%",
         toggleActions: "play reverse play reverse",
         invalidateOnRefresh: true
-      }
-    });
-
-    tl.from(section, {
+      },
       opacity: 0,
-      y: 60,
-      scale: 0.98,
-      duration: 1.1,
-      ease: "power2.out"
+      y: 50,
+      duration: 1,
+      ease: "power2.out",
+      delay: index * 0.05
     });
-
-    if (elements.length) {
-      tl.from(elements, {
-        y: 30,
-        opacity: 0,
-        stagger: 0.1,
-        ease: "power2.out",
-        duration: 0.6
-      }, "-=0.6");
-    }
   });
 
-  // ✅ Animate Tech Stack sections
+  // ✅ Tech stack blocks
   gsap.utils.toArray(".tech-section").forEach((section) => {
-    const tl = gsap.timeline({
+    gsap.from(section, {
       scrollTrigger: {
         trigger: section,
         start: "top 85%",
-        end: "top 10%",
         toggleActions: "play reverse play reverse",
-        scrub: false,
         invalidateOnRefresh: true
-      }
-    });
-
-    tl.from(section, {
+      },
       opacity: 0,
-      y: 100,
-      scale: 0.9,
-      duration: 0.8,
+      y: 80,
+      duration: 1,
       ease: "back.out(1.7)"
     });
-
-    const images = section.querySelectorAll("img");
-    if (images.length) {
-      tl.from(images, {
-        y: 30,
-        opacity: 0,
-        stagger: 0.05,
-        duration: 0.5,
-        ease: "power2.out"
-      }, "-=0.4");
-    }
   });
 
-  // ✅ Animate individual project cards inside #projects
-gsap.utils.toArray("#projects > div").forEach((card, i) => {
-  gsap.from(card, {
-    scrollTrigger: {
-      trigger: card,
-      start: "top 85%",
-      toggleActions: "play reverse play reverse",
-      invalidateOnRefresh: true
-    },
-    opacity: 0,
-    y: 100,
-    scale: 0.95,
-    duration: 0.9,
-    ease: "power3.out",
-    delay: i * 0.1
-  });
-});
-
-  // ✅ Exploring section
-  gsap.from("#exploring", {
-    scrollTrigger: {
-      trigger: "#exploring",
-      start: "top 80%",
-      toggleActions: "play none none none",
-      invalidateOnRefresh: true
-    },
-    opacity: 0,
-    y: 80,
-    duration: 1,
-    ease: "power2.out"
-  });
-
-  // ✅ Navbar animation (only once)
-  gsap.from("header", {
-    y: -80,
-    opacity: 0,
-    duration: 1,
-    ease: "bounce.out"
+  // ✅ Projects: Animate all child divs inside #projects
+  gsap.utils.toArray("#projects > div").forEach((card, i) => {
+    gsap.from(card, {
+      scrollTrigger: {
+        trigger: card,
+        start: "top 85%",
+        toggleActions: "play reverse play reverse",
+        invalidateOnRefresh: true
+      },
+      opacity: 0,
+      y: 80,
+      duration: 1,
+      ease: "power3.out",
+      delay: i * 0.1
+    });
   });
 
   // ✅ GitHub images
@@ -470,33 +410,28 @@ gsap.utils.toArray("#projects > div").forEach((card, i) => {
         toggleActions: "play reverse play reverse",
         invalidateOnRefresh: true
       },
-      y: 60 + i * 10,
       opacity: 0,
+      y: 60,
       scale: 0.95,
-      duration: 0.8 + i * 0.2,
+      duration: 1,
       ease: "expo.out"
     });
   });
 
-  // ✅ Section headings parallax
-  gsap.utils.toArray("section h2").forEach((heading) => {
-    gsap.from(heading, {
-      scrollTrigger: {
-        trigger: heading,
-        start: "top 90%",
-        end: "top 20%",
-        scrub: true,
-        invalidateOnRefresh: true
-      },
-      y: 40,
-      opacity: 0.5,
-      ease: "sine.out"
-    });
+  // ✅ Header entrance animation
+  gsap.from("header", {
+    y: -80,
+    opacity: 0,
+    duration: 1,
+    ease: "power2.out"
   });
 
-  // 🔁 Ensure all triggers are accurate after load
-  setTimeout(() => ScrollTrigger.refresh(), 100);
+  // ✅ Final scrollTrigger sync
+  setTimeout(() => {
+    ScrollTrigger.refresh();
+  }, 100);
 });
+
 
   </script>
 </body>
