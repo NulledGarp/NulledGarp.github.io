@@ -17,20 +17,18 @@
 </head>
 <body class="bg-gradient-to-b from-gray-900 via-gray-950 to-black text-white font-sans overflow-x-hidden relative">
 
-  <!-- Sakura Sakura Apple 26 Inspired Animated Video Background -->
+  <!-- Sasuke Midnight Video Background -->
   <div class="fixed inset-0 -z-20 w-full h-full overflow-hidden pointer-events-none">
     <video id="bg-video" class="w-full h-full object-cover opacity-70" autoplay loop muted playsinline>
       <source src="back.mp4" type="video/mp4" />
-      <!-- Fallback for browsers without video support -->
       Your browser does not support the video tag.
     </video>
-    <!-- Overlay for sakura petals and midnight effect -->
-    <div class="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-pink-900 opacity-60"></div>
-    <canvas id="sakura-canvas" class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
+    <!-- Midnight overlay for depth and pinkish edge -->
+    <div class="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-pink-900 opacity-50"></div>
   </div>
 
-  <!-- Top Bar Navigation -->
-  <header class="bg-gray-900 bg-opacity-70 backdrop-blur-lg fixed top-0 left-0 w-full z-50 shadow-lg border-b border-pink-300/20">
+  <!-- Top Bar Navigation (Apple/Sasuke Midnight Style) -->
+  <header class="bg-gray-900 bg-opacity-70 backdrop-blur-lg fixed top-0 left-0 w-full z-50 shadow-lg border-b border-pink-300/30">
     <div class="max-w-6xl mx-auto px-6 py-3 flex justify-between items-center">
       <div class="flex items-center space-x-3">
         <span class="w-2 h-2 bg-pink-400 rounded-full shadow-pink-500/50"></span>
@@ -181,7 +179,7 @@
       </div>
     </section>
     
-    <section id="download" class="space-y-6 text-center">
+     <section id="download" class="space-y-6 text-center">
       <h2 class="text-2xl font-semibold text-pink-400">Download Resume</h2>
       <p class="text-gray-300">Click below to download my full resume as a PDF.</p>
       <a href="resume.pdf" download class="inline-block bg-gradient-to-r from-pink-500 via-gray-700 to-black hover:from-pink-600 hover:to-gray-900 text-white px-8 py-3 rounded-full shadow-xl transition-all duration-300 border border-pink-200/30">Download Resume PDF</a>
@@ -218,54 +216,6 @@
       duration: 1,
       ease: "bounce.out"
     });
-
-    // Sakura Petal Animation
-    const canvas = document.getElementById('sakura-canvas');
-    const ctx = canvas.getContext('2d');
-    let petals = [];
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-    function randomPetal() {
-      return {
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        r: 12 + Math.random() * 6,
-        dx: Math.random() * 0.5 - 0.2,
-        dy: 0.5 + Math.random() * 0.7,
-        alpha: 0.7 + Math.random() * 0.3,
-        color: `rgba(236,72,153,${0.5 + Math.random() * 0.5})`
-      };
-    }
-    function drawPetal(p) {
-      ctx.save();
-      ctx.globalAlpha = p.alpha;
-      ctx.beginPath();
-      ctx.ellipse(p.x, p.y, p.r, p.r * 0.6, Math.PI / 6, 0, 2 * Math.PI);
-      ctx.fillStyle = p.color;
-      ctx.shadowColor = "#ec4899";
-      ctx.shadowBlur = 8;
-      ctx.fill();
-      ctx.restore();
-    }
-    function animatePetals() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let p of petals) {
-        drawPetal(p);
-        p.x += p.dx;
-        p.y += p.dy;
-        if (p.y > canvas.height + 10) {
-          p.x = Math.random() * canvas.width;
-          p.y = -20;
-        }
-      }
-      requestAnimationFrame(animatePetals);
-    }
-    petals = Array.from({length: 22}, randomPetal);
-    animatePetals();
   </script>
 </body>
 </html>
