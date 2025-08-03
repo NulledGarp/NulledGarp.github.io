@@ -7,45 +7,30 @@
   <meta name="description" content="Damilare Osibanjo - Resume Landing Page" />
   <title>Damilare Osibanjo | Resume</title>
 
-
+  <!-- TailwindCSS CDN -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="wallpaper.css" />
 
+  <!-- GSAP CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 </head>
 <body class="bg-gradient-to-b from-gray-900 via-gray-950 to-black text-white font-sans overflow-x-hidden relative">
-
-  <style>
-    section {
-  opacity: 0;
-  transform: translateY(30px) scale(0.98);
-  transition: none !important;
-}
-
-html.is-loaded section {
-  opacity: 1;
-  transform: none;
-}
-  </style>
-
 
 <div class="fixed inset-0 -z-20 w-full h-full overflow-hidden pointer-events-none">
   <div class="absolute inset-0 bg-black/60"></div> <!-- Soft black tint to dim video -->
 
-<video 
-  id="bg-video"
-  class="w-full h-full object-cover opacity-40 mix-blend-overlay"
-  muted
-  playsinline
-  preload="none"
->
-  <source src="Back.mp4" type="video/mp4" />
-  Your browser does not support the video tag.
-</video>
-
+  <video 
+    id="bg-video" 
+    class="w-full h-full object-cover opacity-40 mix-blend-overlay" 
+    autoplay 
+    loop 
+    muted 
+    playsinline
+  >
+    <source src="Back.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
 
   <!-- Optional subtle gradient for a pinkish aesthetic -->
   <div class="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-pink-950 opacity-30"></div>
@@ -174,154 +159,48 @@ html.is-loaded section {
   </ul>
 </section>
 
-<section id="exploring" class="py-16 bg-gray-900 rounded-2xl shadow-inner px-6 md:px-12 space-y-6">
-  <div class="text-center">
-    <h2 class="text-3xl font-bold text-pink-400 tracking-wide">Currently Exploring</h2>
-    <p class="text-gray-400 text-base mt-2">Things I'm learning, building, or just messing around with lately</p>
-  </div>
+    <section id="exploring" class="space-y-4">
+      <h2 class="text-2xl font-semibold text-pink-400">Currently Exploring</h2>
+      <ul class="list-disc list-inside text-gray-300 text-lg space-y-1">
+        <li>Reinforcement Learning & Statistical Arbitrage</li>
+        <li>Cybersecurity (Pentesting & Network Security)</li>
+        <li>Building low-level systems in C and Assembly</li>
+        <li>Scalable backend systems using Go and Python</li>
+      </ul>
+    </section>
 
-  <ul class="max-w-3xl mx-auto text-left text-gray-300 text-lg space-y-4">
-    <li class="flex items-start gap-3">
-      <span class="text-pink-400 mt-1">▸</span>
-      <span>I have beem diving into how trading algorithms work. Stuff like predicting patterns and market behavior feels like a cool mix of logic and luck.</span>
-    </li>
-    <li class="flex items-start gap-3">
-      <span class="text-pink-400 mt-1">▸</span>
-      <span>Trying to really sharpen my Python. Writing cleaner code, using async better, and just understanding what makes good structure.</span>
-    </li>
-    <li class="flex items-start gap-3">
-      <span class="text-pink-400 mt-1">▸</span>
-      <span>Been spending time in C/C++ and Assembly again. It’s hard but seeing exactly what the machine is doing is kinda addictive.</span>
-    </li>
-    <li class="flex items-start gap-3">
-      <span class="text-pink-400 mt-1">▸</span>
-      <span>Exploring how to build fast and simple backend systems in Go. Mainly stuff like routing, performance, and clean architecture for microservice designs.</span>
-    </li>
-    <li class="flex items-start gap-3">
-      <span class="text-pink-400 mt-1">▸</span>
-      <span>Working on getting better at full-stack stuff — like state management, forms, routing, and setting up proper user flows.</span>
-    </li>
-    <li class="flex items-start gap-3">
-      <span class="text-pink-400 mt-1">▸</span>
-      <span>I’ve also been poking around networkinglearning, how systems talk to each other, and what makes a backend setup actually reliable.</span>
-    </li>
-    <li class="flex items-start gap-3">
-      <span class="text-pink-400 mt-1">▸</span>
-      <span>And yeah, security is always in the background, trying out tools, breaking stuff (in test envs), and figuring out how to defend against it.</span>
-    </li>
-  </ul>
-</section>
+    <section id="projects" class="space-y-6">
+      <h2 class="text-2xl font-semibold text-pink-400">GitHub Projects (Highlights)</h2>
 
-   <section id="projects" class="space-y-10 py-16">
-  <h2 class="text-3xl font-bold text-pink-400 text-center">GitHub Projects (Highlights)</h2>
+      <div>
+        <h3 class="text-white font-semibold text-lg">SchoolBot (William)</h3>
+        <p class="text-gray-300">Smart school Q&A chatbot with info/contact detection</p>
+        <p class="text-sm text-gray-400">Stack: Node.js, Express, OpenAI API, Socket.IO</p>
+      </div>
 
-  <!-- Project: WindowsPortfolio -->
-  <div class="bg-gray-900/60 backdrop-blur-md p-6 rounded-xl border border-pink-500/10 shadow-xl hover:shadow-pink-400/20 transition-all duration-300">
-    <h3 class="text-white text-xl font-semibold">WindowsPortfolio</h3>
-    <p class="text-gray-300 mt-1">A portfolio website that emulates Windows 10, easy to configure for users with minimal coding experience.</p>
-    <a href="https://github.com/NulledGarp/Portfolio" target="_blank" class="text-pink-400 hover:underline mt-2 inline-block">View on GitHub →</a>
-  </div>
+      <div>
+        <h3 class="text-white font-semibold text-lg">Text Editor in C</h3>
+        <p class="text-gray-300">Custom text editor with caret, scrolling, and file I/O</p>
+        <p class="text-sm text-gray-400">Stack: Pure C, Win32 API</p>
+      </div>
 
-  <!-- Project: C Text Editor -->
-  <div class="bg-gray-900/60 backdrop-blur-md p-6 rounded-xl border border-pink-500/10 shadow-xl hover:shadow-pink-400/20 transition-all duration-300">
-    <h3 class="text-white text-xl font-semibold">C Text Editor</h3>
-    <p class="text-gray-300 mt-1">A simple Windows text editor in pure C using Win32 API with features like syntax highlighting, caret navigation, and word count.</p>
-    <ul class="list-disc list-inside text-sm text-gray-400 mt-2 space-y-1">
-      <li>Open/Save .txt files</li>
-      <li>Light/Dark mode toggle</li>
-      <li>Syntax highlighting for C keywords</li>
-      <li>Caret + clipboard support</li>
-    </ul>
-    <a href="https://github.com/NulledGarp/C-project-Text-Editor" target="_blank" class="text-pink-400 hover:underline mt-2 inline-block">View on GitHub →</a>
-  </div>
+      <div>
+        <h3 class="text-white font-semibold text-lg">Admin News Ticker</h3>
+        <p class="text-gray-300">Realtime scrolling updates and backend editor</p>
+        <p class="text-sm text-gray-400">Stack: Flask, JavaScript, TailwindCSS</p>
+      </div>
+    </section>
 
-  <!-- Project: Yeshua Chat Assistant -->
-  <div class="bg-gray-900/60 backdrop-blur-md p-6 rounded-xl border border-pink-500/10 shadow-xl hover:shadow-pink-400/20 transition-all duration-300">
-    <h3 class="text-white text-xl font-semibold">Yeshua Chat Assistant</h3>
-    <p class="text-gray-300 mt-1">A real-time school chatbot built with Node.js, Express, and Socket.IO. Dynamic AI responses and Markdown-like formatting.</p>
-    <ul class="list-disc list-inside text-sm text-gray-400 mt-2 space-y-1">
-      <li>Live WebSocket messaging</li>
-      <li>Custom assistant persona</li>
-      <li>Responsive UI with animation</li>
-      <li>Templating with EJS</li>
-    </ul>
-    <a href="https://github.com/NulledGarp/ChatAssistant" target="_blank" class="text-pink-400 hover:underline mt-2 inline-block">View on GitHub →</a>
-  </div>
-
-  <!-- Project: Pong Game -->
-  <div class="bg-gray-900/60 backdrop-blur-md p-6 rounded-xl border border-pink-500/10 shadow-xl hover:shadow-pink-400/20 transition-all duration-300">
-    <h3 class="text-white text-xl font-semibold">Pong Game</h3>
-    <p class="text-gray-300 mt-1">Classic Pong game in JavaScript and Canvas. Includes difficulty levels and responsive controls.</p>
-    <ul class="list-disc list-inside text-sm text-gray-400 mt-2 space-y-1">
-      <li>3 difficulty modes</li>
-      <li>Mouse-controlled paddle</li>
-      <li>Clean start menu UI</li>
-    </ul>
-    <div class="flex gap-4 mt-2">
-      <a href="https://github.com/NulledGarp/Pong" target="_blank" class="text-pink-400 hover:underline">GitHub →</a>
-      <a href="https://nulledgarp.github.io/Pong/" target="_blank" class="text-pink-400 hover:underline">Live Demo →</a>
-    </div>
-  </div>
-
-  <!-- Project: Console Snake Game -->
-  <div class="bg-gray-900/60 backdrop-blur-md p-6 rounded-xl border border-pink-500/10 shadow-xl hover:shadow-pink-400/20 transition-all duration-300">
-    <h3 class="text-white text-xl font-semibold">Console Snake Game (Windows)</h3>
-    <p class="text-gray-300 mt-1">A simple Snake game implemented in C for the Windows console using the Win32 API. No external libraries required.</p>
-    <ul class="list-disc list-inside text-sm text-gray-400 mt-2 space-y-1">
-      <li>Classic snake mechanics</li>
-      <li>Lightweight and efficient</li>
-      <li>Direct console cursor rendering</li>
-      <li>Randomized food spawning</li>
-      <li>Basic game over detection</li>
-    </ul>
-    <a href="https://github.com/NulledGarp/Snake-Game" target="_blank" class="text-pink-400 hover:underline mt-2 inline-block">View on GitHub →</a>
-  </div>
-
-  <!-- Project: Calculator -->
-  <div class="bg-gray-900/60 backdrop-blur-md p-6 rounded-xl border border-pink-500/10 shadow-xl hover:shadow-pink-400/20 transition-all duration-300">
-    <h3 class="text-white text-xl font-semibold">Simple Calculator</h3>
-    <p class="text-gray-300 mt-1">A basic calculator that performs arithmetic operations like addition, subtraction, multiplication, and division.</p>
-    <ul class="list-disc list-inside text-sm text-gray-400 mt-2 space-y-1">
-      <li>Basic operations: +, −, ×, ÷</li>
-      <li>Handles invalid input</li>
-      <li>Division by zero protection</li>
-    </ul>
-    <a href="https://github.com/NulledGarp/Simple-Calculator-Python" target="_blank" class="text-pink-400 hover:underline mt-2 inline-block">View on GitHub →</a>
-  </div>
-</section>
-
-
-    <section id="github" class="space-y-8 py-16">
-  <h2 class="text-3xl font-bold text-pink-400 text-center">GitHub Overview</h2>
-
-  <!-- Top Languages -->
-  <div class="flex justify-center">
-    <img 
-      src="https://github-readme-stats.vercel.app/api/top-langs/?username=NulledGarp&layout=compact&theme=radical&hide_border=true&count_private=true"
-      alt="Top Languages Used by NulledGarp on GitHub"
-      class="rounded-md shadow-md max-w-full w-[400px]"
-    />
-  </div>
-
-  <!-- GitHub Stats -->
-  <div class="flex justify-center">
-    <img 
-      src="https://github-readme-stats.vercel.app/api?username=NulledGarp&show_icons=true&theme=radical&hide_border=true&count_private=true"
-      alt="GitHub Stats for NulledGarp"
-      class="rounded-md shadow-md max-w-full w-[500px]"
-    />
-  </div>
-
-  <!-- Streak Stats -->
-  <div class="flex justify-center">
-    <img 
-      src="https://github-readme-streak-stats.herokuapp.com?user=NulledGarp&theme=radical&hide_border=true"
-      alt="GitHub Contribution Streak for NulledGarp"
-      class="rounded-md shadow-md max-w-full w-[500px]"
-    />
-  </div>
-</section>
-
+    <section id="languages" class="space-y-4">
+      <h2 class="text-2xl font-semibold text-pink-400">Most Used Languages (GitHub)</h2>
+      <div class="flex justify-center">
+        <img 
+          src="https://github-readme-stats.vercel.app/api/top-langs/?username=NulledGarp&layout=compact&theme=radical&hide_border=true&count_private=true"
+          alt="Top Languages"
+          class="rounded-md shadow-md max-w-full w-[400px]"
+        />
+      </div>
+    </section>
     
 <section id="download" class="flex justify-center items-center py-20 px-4 bg-transparent">
   <div class="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl p-10 max-w-xl w-full space-y-6 text-center shadow-xl">
@@ -377,64 +256,31 @@ html.is-loaded section {
 
   // 🔹 Cone-up effect for each .tech-section block
   gsap.utils.toArray(".tech-section").forEach((section, i) => {
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: section,
-      start: "top 85%",
-      end: "top 10%",
-      toggleActions: "play reverse play reverse",
-      markers: false,
-      scrub: false,
-      once: false
-    }
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: "top 85%",
+        toggleActions: "play none none none"
+      }
+    });
+
+    tl.from(section, {
+      opacity: 0,
+      y: 100,
+      scale: 0.8,
+      transformOrigin: "center bottom",
+      duration: 0.8,
+      ease: "back.out(1.7)"
+    });
+
+    tl.from(section.querySelectorAll("img"), {
+      y: 30,
+      opacity: 0,
+      stagger: 0.05,
+      duration: 0.5,
+      ease: "power2.out"
+    }, "-=0.4");
   });
-
-  tl.from(section, {
-    opacity: 0,
-    y: 100,
-    scale: 0.8,
-    transformOrigin: "center bottom",
-    duration: 0.8,
-    ease: "back.out(1.7)"
-  });
-
-  tl.from(section.querySelectorAll("img"), {
-    y: 30,
-    opacity: 0,
-    stagger: 0.05,
-    duration: 0.5,
-    ease: "power2.out"
-  }, "-=0.4");
-});
-
-gsap.from("#exploring", {
-  scrollTrigger: {
-    trigger: "#exploring",
-    start: "top 80%",
-    toggleActions: "play none none none"
-  },
-  opacity: 0,
-  y: 80,
-  duration: 1,
-  ease: "power2.out"
-});
-
-gsap.utils.toArray(".project-card").forEach((card, i) => {
-  gsap.from(card, {
-    scrollTrigger: {
-      trigger: card,
-      start: "top 85%",
-      toggleActions: "play reverse play reverse",
-    },
-    opacity: 0,
-    y: 100,
-    scale: 0.95,
-    duration: 0.9,
-    ease: "power3.out",
-    delay: i * 0.1,
-  });
-});
-
   </script>
 </body>
 </html>
