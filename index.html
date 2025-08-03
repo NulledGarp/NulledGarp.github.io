@@ -160,37 +160,95 @@
   </ul>
 </section>
 
-    <section id="exploring" class="space-y-4">
-      <h2 class="text-2xl font-semibold text-pink-400">Currently Exploring</h2>
-      <ul class="list-disc list-inside text-gray-300 text-lg space-y-1">
-        <li>Reinforcement Learning & Statistical Arbitrage</li>
-        <li>Cybersecurity (Pentesting & Network Security)</li>
-        <li>Building low-level systems in C and Assembly</li>
-        <li>Scalable backend systems using Go and Python</li>
-      </ul>
-    </section>
+<section id="exploring" class="py-16 bg-gray-900 rounded-2xl shadow-inner px-6 md:px-12 space-y-6">
+  <div class="text-center">
+    <h2 class="text-3xl font-bold text-pink-400 tracking-wide">Currently Exploring</h2>
+    <p class="text-gray-400 text-base mt-2">Things I'm learning, building, or just messing around with lately</p>
+  </div>
 
-    <section id="projects" class="space-y-6">
-      <h2 class="text-2xl font-semibold text-pink-400">GitHub Projects (Highlights)</h2>
+  <ul class="max-w-3xl mx-auto text-left text-gray-300 text-lg space-y-4">
+    <li class="flex items-start gap-3">
+      <span class="text-pink-400 mt-1">▸</span>
+      <span>I have beem diving into how trading algorithms work. Stuff like predicting patterns and market behavior feels like a cool mix of logic and luck.</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="text-pink-400 mt-1">▸</span>
+      <span>Trying to really sharpen my Python. Writing cleaner code, using async better, and just understanding what makes good structure.</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="text-pink-400 mt-1">▸</span>
+      <span>Been spending time in C/C++ and Assembly again. It’s hard but seeing exactly what the machine is doing is kinda addictive.</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="text-pink-400 mt-1">▸</span>
+      <span>Exploring how to build fast and simple backend systems in Go. Mainly stuff like routing, performance, and clean architecture for microservice designs.</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="text-pink-400 mt-1">▸</span>
+      <span>Working on getting better at full-stack stuff — like state management, forms, routing, and setting up proper user flows.</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="text-pink-400 mt-1">▸</span>
+      <span>I’ve also been poking around networkinglearning, how systems talk to each other, and what makes a backend setup actually reliable.</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="text-pink-400 mt-1">▸</span>
+      <span>And yeah, security is always in the background, trying out tools, breaking stuff (in test envs), and figuring out how to defend against it.</span>
+    </li>
+  </ul>
+</section>
 
-      <div>
-        <h3 class="text-white font-semibold text-lg">SchoolBot (William)</h3>
-        <p class="text-gray-300">Smart school Q&A chatbot with info/contact detection</p>
-        <p class="text-sm text-gray-400">Stack: Node.js, Express, OpenAI API, Socket.IO</p>
-      </div>
+    <section id="projects" class="space-y-10 py-16">
+  <h2 class="text-3xl font-bold text-pink-400 text-center">GitHub Projects (Highlights)</h2>
 
-      <div>
-        <h3 class="text-white font-semibold text-lg">Text Editor in C</h3>
-        <p class="text-gray-300">Custom text editor with caret, scrolling, and file I/O</p>
-        <p class="text-sm text-gray-400">Stack: Pure C, Win32 API</p>
-      </div>
+  <!-- Project: WindowsPortfolio -->
+  <div class="bg-gray-900/60 backdrop-blur-md p-6 rounded-xl border border-pink-500/10 shadow-xl hover:shadow-pink-400/20 transition-all duration-300">
+    <h3 class="text-white text-xl font-semibold">WindowsPortfolio</h3>
+    <p class="text-gray-300 mt-1">A portfolio website that emulates Windows 10, easy to configure for users with minimal coding experience.</p>
+    <a href="https://github.com/NulledGarp/Portfolio" target="_blank" class="text-pink-400 hover:underline mt-2 inline-block">View on GitHub →</a>
+  </div>
 
-      <div>
-        <h3 class="text-white font-semibold text-lg">Admin News Ticker</h3>
-        <p class="text-gray-300">Realtime scrolling updates and backend editor</p>
-        <p class="text-sm text-gray-400">Stack: Flask, JavaScript, TailwindCSS</p>
-      </div>
-    </section>
+  <!-- Project: C Text Editor -->
+  <div class="bg-gray-900/60 backdrop-blur-md p-6 rounded-xl border border-pink-500/10 shadow-xl hover:shadow-pink-400/20 transition-all duration-300">
+    <h3 class="text-white text-xl font-semibold">C Text Editor</h3>
+    <p class="text-gray-300 mt-1">A simple Windows text editor in pure C using Win32 API with features like syntax highlighting, caret navigation, and word count.</p>
+    <ul class="list-disc list-inside text-sm text-gray-400 mt-2 space-y-1">
+      <li>Open/Save .txt files</li>
+      <li>Light/Dark mode toggle</li>
+      <li>Syntax highlighting for C keywords</li>
+      <li>Caret + clipboard support</li>
+    </ul>
+    <a href="https://github.com/NulledGarp/C-project-Text-Editor" target="_blank" class="text-pink-400 hover:underline mt-2 inline-block">View on GitHub →</a>
+  </div>
+
+  <!-- Project: Yeshua Chat Assistant -->
+  <div class="bg-gray-900/60 backdrop-blur-md p-6 rounded-xl border border-pink-500/10 shadow-xl hover:shadow-pink-400/20 transition-all duration-300">
+    <h3 class="text-white text-xl font-semibold">Yeshua Chat Assistant</h3>
+    <p class="text-gray-300 mt-1">A real-time school chatbot built with Node.js, Express, and Socket.IO. Dynamic AI responses and Markdown-like formatting.</p>
+    <ul class="list-disc list-inside text-sm text-gray-400 mt-2 space-y-1">
+      <li>Live WebSocket messaging</li>
+      <li>Custom assistant persona</li>
+      <li>Responsive UI with animation</li>
+      <li>Templating with EJS</li>
+    </ul>
+    <a href="https://github.com/NulledGarp/ChatAssistant" target="_blank" class="text-pink-400 hover:underline mt-2 inline-block">View on GitHub →</a>
+  </div>
+
+  <!-- Project: Pong Game -->
+  <div class="bg-gray-900/60 backdrop-blur-md p-6 rounded-xl border border-pink-500/10 shadow-xl hover:shadow-pink-400/20 transition-all duration-300">
+    <h3 class="text-white text-xl font-semibold">Pong Game</h3>
+    <p class="text-gray-300 mt-1">Classic Pong game in JavaScript and Canvas. Includes difficulty levels and responsive controls.</p>
+    <ul class="list-disc list-inside text-sm text-gray-400 mt-2 space-y-1">
+      <li>3 difficulty modes</li>
+      <li>Mouse-controlled paddle</li>
+      <li>Clean start menu UI</li>
+    </ul>
+    <div class="flex gap-4 mt-2">
+      <a href="https://github.com/NulledGarp/Pong" target="_blank" class="text-pink-400 hover:underline">GitHub →</a>
+      <a href="https://nulledgarp.github.io/Pong/" target="_blank" class="text-pink-400 hover:underline">Live Demo →</a>
+    </div>
+  </div>
+</section>
 
     <section id="languages" class="space-y-4">
       <h2 class="text-2xl font-semibold text-pink-400">Most Used Languages (GitHub)</h2>
@@ -257,32 +315,63 @@
 
   // 🔹 Cone-up effect for each .tech-section block
   gsap.utils.toArray(".tech-section").forEach((section, i) => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: section,
-        start: "top 85%",
-        toggleActions: "play none none none"
-      }
-    });
-
-    tl.from(section, {
-      opacity: 0,
-      y: 100,
-      scale: 0.8,
-      transformOrigin: "center bottom",
-      duration: 0.8,
-      ease: "back.out(1.7)"
-    });
-
-    tl.from(section.querySelectorAll("img"), {
-      y: 30,
-      opacity: 0,
-      stagger: 0.05,
-      duration: 0.5,
-      ease: "power2.out"
-    }, "-=0.4");
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: section,
+      start: "top 85%",
+      end: "top 10%",
+      toggleActions: "play reverse play reverse",
+      markers: false,
+      scrub: false,
+      once: false
+    }
   });
 
+  tl.from(section, {
+    opacity: 0,
+    y: 100,
+    scale: 0.8,
+    transformOrigin: "center bottom",
+    duration: 0.8,
+    ease: "back.out(1.7)"
+  });
+
+  tl.from(section.querySelectorAll("img"), {
+    y: 30,
+    opacity: 0,
+    stagger: 0.05,
+    duration: 0.5,
+    ease: "power2.out"
+  }, "-=0.4");
+});
+
+gsap.from("#exploring", {
+  scrollTrigger: {
+    trigger: "#exploring",
+    start: "top 80%",
+    toggleActions: "play none none none"
+  },
+  opacity: 0,
+  y: 80,
+  duration: 1,
+  ease: "power2.out"
+});
+
+gsap.utils.toArray(".project-card").forEach((card, i) => {
+  gsap.from(card, {
+    scrollTrigger: {
+      trigger: card,
+      start: "top 85%",
+      toggleActions: "play reverse play reverse",
+    },
+    opacity: 0,
+    y: 100,
+    scale: 0.95,
+    duration: 0.9,
+    ease: "power3.out",
+    delay: i * 0.1,
+  });
+});
 
   </script>
 </body>
